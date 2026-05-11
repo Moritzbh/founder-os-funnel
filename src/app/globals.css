@@ -343,3 +343,329 @@ body {
   50% { opacity: 0.4; }
 }
 .pulse-dot { animation: pulse-dot 2s infinite; }
+
+/* ============================================================
+   MOBILE-FIRST UTILITIES (alles unter 1024 px = lg breakpoint)
+   ============================================================ */
+
+/* Sticky mini-header — kompakt, immer oben, schiebt Hero nicht weg */
+.m-sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-line);
+  display: none; /* desktop hidden */
+}
+@media (max-width: 1023px) {
+  .m-sticky-header { display: flex; }
+}
+
+.m-sticky-header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  gap: 12px;
+}
+.m-sticky-header .bb-logo { font-size: 22px; }
+.m-sticky-header .bb-logo-sub { font-size: 11px; margin-left: 8px; top: -2px; }
+.m-sticky-header .bb-logo-sub-trademark { font-size: 8px; }
+.m-sticky-cta {
+  background: var(--color-gold);
+  color: var(--color-navy);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(255,195,0,0.3);
+}
+
+/* Sticky bottom CTA bar — sales-killer-fix für lange Mobile-Page */
+.m-sticky-cta-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background: #ffffff;
+  border-top: 1px solid var(--color-line);
+  box-shadow: 0 -8px 24px rgba(27,33,56,0.08);
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  display: none;
+}
+@media (max-width: 1023px) {
+  .m-sticky-cta-bar { display: flex; align-items: center; gap: 12px; }
+  /* Padding-bottom für die Page selbst, damit nichts hinter der Bar verschwindet */
+  body { padding-bottom: 84px; }
+}
+.m-sticky-cta-bar-price {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.m-sticky-cta-bar-price-old {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--color-red);
+  text-decoration: line-through;
+  line-height: 1;
+}
+.m-sticky-cta-bar-price-new {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.m-sticky-cta-bar-btn {
+  flex: 1;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(255,195,0,0.35);
+}
+.m-sticky-cta-bar-btn:active { transform: scale(0.98); }
+
+/* Trust-Marquee (Mobile) — endloses Auto-Scroll, kein Stacking */
+@media (max-width: 767px) {
+  .trust-strip {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 0;
+    padding: 18px 0;
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+  .trust-strip-track {
+    display: flex;
+    gap: 36px;
+    animation: trust-marquee 22s linear infinite;
+    width: max-content;
+  }
+  .trust-strip-track .trust-strip-item { font-size: 14px; white-space: nowrap; }
+}
+@keyframes trust-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Phase Accordion (Mobile-only) — Details-Tag-styling */
+.m-phase-accordion {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .m-phase-accordion { display: block; }
+  .m-phase-grid-desktop { display: none !important; }
+}
+.m-phase-acc {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.m-phase-acc > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  background: var(--color-navy);
+  color: #ffffff;
+  transition: background 0.2s ease;
+}
+.m-phase-acc > summary::-webkit-details-marker { display: none; }
+.m-phase-acc[open] > summary { background: var(--color-navy-deep); }
+.m-phase-acc-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--color-gold);
+  letter-spacing: -0.04em;
+}
+.m-phase-acc-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+  line-height: 1.15;
+}
+.m-phase-acc-meta {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+}
+.m-phase-acc-toggle {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--color-gold);
+  transition: transform 0.2s ease;
+}
+.m-phase-acc[open] .m-phase-acc-toggle { transform: rotate(45deg); }
+.m-phase-acc-body {
+  padding: 18px 20px 20px;
+}
+.m-phase-acc-body .check-bullet {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+.m-phase-acc-gate {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(255,195,0,0.15);
+  border: 1px solid rgba(255,195,0,0.4);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: 0.02em;
+}
+.m-phase-acc-q {
+  font-style: italic;
+  color: var(--color-text-3);
+  font-size: 14px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+/* Cases Carousel (Mobile-only) — Snap-Scroll horizontal */
+@media (max-width: 767px) {
+  .m-cases-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 14px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 16px 16px;
+    margin: 0 -24px;
+  }
+  .m-cases-carousel::-webkit-scrollbar { display: none; }
+  .m-cases-carousel > * {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+}
+
+/* Stats Mobile — 3-Col Row mit kleinen Numbers */
+@media (max-width: 767px) {
+  .m-stats-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  .m-stats-row .m-stat-num {
+    font-size: 44px !important;
+  }
+  .m-stats-row .m-stat-label {
+    font-size: 13px !important;
+  }
+  .m-stats-row .m-stat-desc {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Bonus Stack — Mobile collapsed (top 4 + details-toggle), Desktop alle sichtbar */
+.m-bonus-details > summary { list-style: none; }
+.m-bonus-details > summary::-webkit-details-marker { display: none; }
+@media (min-width: 1024px) {
+  /* Desktop: Details immer "offen" verhalten, Summary versteckt */
+  .m-bonus-details .m-bonus-more { display: block !important; margin-top: 0.5rem; }
+  .m-bonus-details > summary { display: none !important; }
+}
+
+/* Mobile Section-Padding — kompakter */
+@media (max-width: 767px) {
+  .m-section-pad { padding-top: 56px; padding-bottom: 56px; }
+}
+
+/* Mobile Hero-Order — Product-Card first, Video second */
+@media (max-width: 1023px) {
+  .m-hero-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 24px !important;
+  }
+  .m-hero-card { order: 1; }
+  .m-hero-video { order: 2; }
+}
+
+/* Mobile Audience-Cards — kompakter */
+@media (max-width: 767px) {
+  .m-audience-card { padding: 24px 22px !important; }
+  .m-audience-card ul { gap: 14px; }
+  .m-audience-card .check-bullet {
+    font-size: 14.5px;
+    line-height: 1.45;
+  }
+}
+
+/* Mobile Author-Bio — Image aspect-Ratio anpassen */
+@media (max-width: 767px) {
+  .m-author-image {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 360px;
+  }
+  .m-author-image > div { background-position: center 25% !important; }
+}
+
+/* Mobile Warning-Banner — kleiner */
+@media (max-width: 767px) {
+  .warning-banner {
+    font-size: 13px;
+    padding: 11px 14px;
+    line-height: 1.35;
+  }
+}
+
+/* Mobile Hero-Title — feiner */
+@media (max-width: 767px) {
+  .m-hero-display { font-size: 52px !important; line-height: 0.95 !important; }
+  .m-hero-sub { font-size: 16.5px !important; line-height: 1.45 !important; padding: 0 4px; }
+}
+
+/* Mobile btn-gold — größerer Tap-Target + Mobile-Größe */
+@media (max-width: 767px) {
+  .btn-gold {
+    padding: 16px 24px;
+    font-size: 17px;
+    width: 100%;
+  }
+}
+
+/* Mobile FAQ — Summary kleiner + Touch-friendlier */
+@media (max-width: 767px) {
+  .faq-row > summary {
+    padding: 16px 20px !important;
+    font-size: 14.5px !important;
+    line-height: 1.35;
+    gap: 12px;
+  }
+  .faq-row > div {
+    padding: 0 20px 20px !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+  }
+}
