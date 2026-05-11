@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* ============ AUDIENCE QUALIFICATION — "Wer sollte das nutzen?" ============ */}
-      <section className="bg-bg-soft py-20 lg:py-28">
+      <section className="cream-photo-bg pos-top py-20 lg:py-28">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center mb-12 lg:mb-16">
           <h2 className="h-section text-[clamp(34px,5vw,58px)] mb-4">
             Wer sollte Founder OS nutzen?
@@ -234,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* ============ TESTIMONIALS / NAMED CASES ============ */}
-      <section className="bg-bg-soft py-20 lg:py-28">
+      <section className="cream-photo-bg pos-bottom py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center mb-14">
           <h2 className="h-section text-[clamp(34px,5vw,58px)] mb-4">
             Aus echter <span className="text-red">Agentur-Arbeit</span>.
@@ -334,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* ============ PRICING ============ */}
-      <section id="pricing" className="bg-bg-soft py-20 lg:py-28">
+      <section id="pricing" className="cream-photo-bg pos-right py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-10">
             <div className="eyebrow mb-3">Pricing · Eine Zahl</div>
@@ -426,7 +426,7 @@ export default function Home() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="bg-bg-soft py-20 lg:py-28">
+      <section className="cream-photo-bg pos-left py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <div className="eyebrow mb-3">Häufige Fragen</div>
