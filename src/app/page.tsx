@@ -100,8 +100,19 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Authority-Transfer-Statement */}
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-20 lg:mt-28 text-center">
+          <div className="eyebrow mb-5">Aus der Praxis</div>
+          <p className="font-display font-extrabold text-[clamp(24px,3.2vw,38px)] leading-[1.15] text-navy mb-5">
+            Wir betreuen Unternehmen, die <span className="text-red">2 Mio +</span> im Jahr mit ihrer E-Commerce-Brand umsetzen. Jetzt zeigen wir dir unser Framework, wie das geht.
+          </p>
+          <p className="font-display font-bold text-[clamp(18px,2.4vw,26px)] text-navy/80 leading-tight">
+            Das einzige, was du tun musst: <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">es 1:1 umsetzen.</span>
+          </p>
+        </div>
+
         {/* Trust Logo Strip */}
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mt-16 lg:mt-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mt-16 lg:mt-20">
           <div className="trust-strip border-t border-line/60">
             <span className="trust-strip-item">Shopify Partner</span>
             <span className="trust-strip-item">Meta Business</span>
