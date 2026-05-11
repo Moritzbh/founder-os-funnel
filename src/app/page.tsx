@@ -306,11 +306,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="m-cases-carousel max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-6">
+        <div className="m-cases-carousel max-w-4xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-6">
           {[
             { brand: "Hearo", category: "Hearables · DACH", quote: "Kompletter Aufbau: Marken-Identität, Produktseiten, KI-gestützter Verkaufsprozess — rechtssicher für Deutschland, Österreich, Schweiz.", icon: "H" },
             { brand: "Bachgold", category: "Wasserfiltration · DACH", quote: "Bundle-Relaunch + 15 maßgeschneiderte Produktseiten + wiederverwendbare Shop-Bausteine. Umstellung ohne Shop-Ausfall.", icon: "B" },
-            { brand: "Wake Performance", category: "Sport · Pre-Launch", quote: "Launch-Plan, E-Mail-Setup und Beratung für bezahlte Werbung. Aktuell kurz vor dem ersten Verkauf.", icon: "W" },
           ].map((c) => (
             <div key={c.brand} className="bg-white rounded-2xl border border-line p-7 shadow-[0_4px_24px_rgba(27,33,56,0.06)]">
               <div className="flex items-center gap-4 mb-5 pb-5 border-b border-line">
