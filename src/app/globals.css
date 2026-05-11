@@ -601,15 +601,21 @@ body {
   .m-section-pad { padding-top: 56px; padding-bottom: 56px; }
 }
 
-/* Mobile Hero-Order — Product-Card first, Video second */
+/* Mobile Hero-Order — Video first (Trust via Moritz-Gesicht), dann Product-Card mit Preis & CTA */
 @media (max-width: 1023px) {
   .m-hero-grid {
     display: flex !important;
     flex-direction: column;
-    gap: 24px !important;
+    gap: 20px !important;
+    align-items: stretch;
   }
-  .m-hero-card { order: 1; }
-  .m-hero-video { order: 2; }
+  .m-hero-video {
+    order: 1;
+    width: 100%;
+    max-height: 56vh;
+    align-self: stretch;
+  }
+  .m-hero-card { order: 2; }
 }
 
 /* Mobile Audience-Cards — kompakter */
