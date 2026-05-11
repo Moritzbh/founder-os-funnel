@@ -7,9 +7,10 @@ export default function Home() {
         <strong>Achtung:</strong> Für Anfänger in DACH, die ihre erste eigene Online-Marke starten wollen — <u>ohne vorher Geld zu verbrennen</u>
       </div>
 
-      {/* ============ HEADER (eigene Bar oben, Logo links) ============ */}
-      <header className="bg-white border-b border-line">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-4 lg:py-5 flex items-center justify-between gap-4">
+      {/* ============ HERO ============ */}
+      <section className="sky-bg pt-8 lg:pt-10 pb-16 lg:pb-24">
+        {/* Logo + Back-Link */}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16 flex items-center justify-between flex-wrap gap-4">
           <a href="https://bb-brands.de" className="bb-logo" aria-label="BB Brands Startseite — zurück zur Hauptseite" title="Zurück zur Hauptseite">
             <span className="bb-mark-mirror">B</span>Brands
             <span className="bb-logo-sub">
@@ -26,10 +27,7 @@ export default function Home() {
             <span className="sm:hidden">Hauptseite</span>
           </a>
         </div>
-      </header>
 
-      {/* ============ HERO ============ */}
-      <section className="sky-bg pt-12 lg:pt-20 pb-16 lg:pb-24">
         {/* Hero Headlines */}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center mb-14 lg:mb-20">
           <h1 className="h-display text-[clamp(48px,9vw,124px)] mb-5">
@@ -237,9 +235,9 @@ export default function Home() {
 
         {/* Mid-Page CTA */}
         <div className="max-w-2xl mx-auto px-6 mt-16 lg:mt-20 text-center">
-          <p className="text-[16px] text-text-3 mb-5">Bereit für den vollständigen Pfad?</p>
+          <p className="text-[16px] text-text-3 mb-5">Bereit für den kompletten Plan?</p>
           <a href="#pricing" className="btn-gold">
-            Jetzt Zugriff sichern — € 299
+            Jetzt starten — 299 €
           </a>
         </div>
       </section>
@@ -251,15 +249,15 @@ export default function Home() {
             Aus echter <span className="text-red">Agentur-Arbeit</span>.
           </h2>
           <p className="text-[17px] text-text-3 max-w-2xl mx-auto leading-relaxed">
-            Die SOPs in Founder OS sind die SOPs, mit denen wir seit 2024 bei BB Brands operativ Brands aufbauen. Hier ein paar der Partner:
+            Alles, was in Founder OS steckt, kommt aus der täglichen Arbeit unserer Agentur BB Brands. Hier ein paar der Marken, die wir gerade aufbauen:
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-6">
           {[
-            { brand: "Hearo", category: "Hearables · D2C", quote: "Operativer Build von der Brand-DNA bis zur PDP. AI-native Funnel-Logik, DACH-compliance ready.", icon: "H" },
-            { brand: "Bachgold", category: "Wasserfiltration · DACH", quote: "Bundle-Relaunch + 15 Custom-PDPs + Section-Library. Pre-Cutover ohne Downtime, idempotente Migration.", icon: "B" },
-            { brand: "Wake Performance", category: "Sports · Pre-Launch", quote: "Drop-Plan, E-Mail-Setup, Performance-Marketing-Beratung. Aktuell Pre-Launch, Pre-Revenue.", icon: "W" },
+            { brand: "Hearo", category: "Hearables · DACH", quote: "Kompletter Aufbau: Marken-Identität, Produktseiten, KI-gestützter Verkaufsprozess — rechtssicher für Deutschland, Österreich, Schweiz.", icon: "H" },
+            { brand: "Bachgold", category: "Wasserfiltration · DACH", quote: "Bundle-Relaunch + 15 maßgeschneiderte Produktseiten + wiederverwendbare Shop-Bausteine. Umstellung ohne Shop-Ausfall.", icon: "B" },
+            { brand: "Wake Performance", category: "Sport · Pre-Launch", quote: "Launch-Plan, E-Mail-Setup und Beratung für bezahlte Werbung. Aktuell kurz vor dem ersten Verkauf.", icon: "W" },
           ].map((c) => (
             <div key={c.brand} className="bg-white rounded-2xl border border-line p-7 shadow-[0_4px_24px_rgba(27,33,56,0.06)]">
               <div className="flex items-center gap-4 mb-5 pb-5 border-b border-line">
@@ -277,7 +275,7 @@ export default function Home() {
         </div>
 
         <p className="text-center text-[12px] text-text-3 mt-10 font-mono tracking-wider max-w-3xl mx-auto px-6">
-          Wir zeigen bewusst keine „100k-in-3-Tagen"-Screenshots. Survivor-Bias-Marketing ist genau das Problem in dieser Branche.
+          Wir zeigen bewusst keine „In 30 Tagen 100 K Umsatz"-Screenshots. Solche Geschichten werden gezeigt — die 200 Leute, die's nicht geschafft haben, eben nicht. Genau das ist das Problem dieser Branche.
         </p>
       </section>
 
@@ -285,9 +283,9 @@ export default function Home() {
       <section className="bg-navy py-20 lg:py-28 text-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10 text-center">
           {[
-            { stat: "5+", label: "D2C-Brands", desc: "operativ aufgebaut oder skaliert seit 2024" },
-            { stat: "196", label: "SOPs · Items", desc: "Frameworks aus 2+ Jahren Agentur-Arbeit" },
-            { stat: "82", label: "Shop-Sections", desc: "wiederverwendbar aus dem BB-Repo" },
+            { stat: "5+", label: "Online-Marken", desc: "die wir seit 2024 operativ aufbauen oder skalieren — von 0 € bis Millionen-Umsatz" },
+            { stat: "196", label: "Lektionen", desc: "aus 2+ Jahren Agentur-Arbeit — für Anfänger verständlich aufbereitet" },
+            { stat: "82", label: "Shop-Bausteine", desc: "fertig zum Einbauen in dein Shopify-Theme — du musst nichts selbst programmieren" },
           ].map((s) => (
             <div key={s.label}>
               <div className="font-display font-extrabold text-gold text-[80px] lg:text-[96px] leading-none mb-2">{s.stat}</div>
@@ -325,13 +323,13 @@ export default function Home() {
 
             <div>
               <p className="text-[17px] text-text-2 leading-relaxed mb-4">
-                Ich baue mit BB Brands D2C-Marken operativ auf — kein Berater-Geschwafel, kein Junior-Team. Ich sitze selbst am Shop, schreibe die Ads, baue die Funnel. Founder OS ist mein Solo-Programm, in das ich alle SOPs aus zwei Jahren Agentur-Arbeit gepackt habe.
+                Ich baue mit BB Brands echte Online-Marken auf — kein Berater-Geschwätz, kein Junior-Team. Ich sitze selbst am Shop, schreibe die Werbung, baue die Verkaufsseiten. Founder OS ist mein Solo-Programm, in das ich alles reingepackt habe, was wir intern in zwei Jahren Agentur-Arbeit aufgebaut haben.
               </p>
               <p className="text-[17px] text-text-2 leading-relaxed mb-4">
-                Vorher: 6+ Jahre E-Commerce, mehrere eigene Brands gebaut (manche gescheitert, manche live), DACH-Compliance-Spezialisierung. Founder OS ist das, was ich mir selbst gewünscht hätte, als ich angefangen habe.
+                Vorher: 6+ Jahre im Online-Handel, mehrere eigene Marken gebaut (manche gescheitert, manche bis heute live), Spezialgebiet Rechtliches in DACH. Founder OS ist das, was ich mir selbst gewünscht hätte, als ich angefangen habe.
               </p>
               <p className="text-[17px] text-text-2 leading-relaxed mb-7">
-                Was du bei mir nicht bekommst: Mastermind-Geschwafel, fake Garantien, Lambo-Lifestyle-Bilder. Was du bekommst: das exakte Playbook + direkten Email-Draht.
+                Was du bei mir nicht bekommst: Mastermind-Floskeln, leere Garantien, Lambo-Bilder. Was du bekommst: den exakten Plan + direkten E-Mail-Draht zu mir.
               </p>
               <div className="flex items-center gap-6">
                 <div className="font-display italic text-[32px] text-navy leading-none">— Moritz</div>
@@ -348,12 +346,12 @@ export default function Home() {
       <section id="pricing" className="cream-photo-bg pos-right py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-10">
-            <div className="eyebrow mb-3">Pricing · Eine Zahl</div>
+            <div className="eyebrow mb-3">Preis · Eine Zahl</div>
             <h2 className="h-section text-[clamp(34px,5vw,58px)] mb-4">
-              Sicher dir jetzt deinen <span className="text-red">Zugang</span>.
+              Sicher dir jetzt deinen <span className="text-red">Platz</span>.
             </h2>
             <p className="text-[16px] text-text-3 max-w-xl mx-auto">
-              Einmalig. Kein Retainer. Kein Upsell-Zwang. 14 Tage Garantie ohne Bedingung.
+              Einmalzahlung. Kein Abo. Kein Upsell. 14 Tage Geld zurück — ohne Wenn und Aber.
             </p>
           </div>
 
@@ -361,19 +359,19 @@ export default function Home() {
             <div className="text-center mb-8">
               <div className="price-strikethrough mb-1">€ 499</div>
               <div className="price-sale text-[clamp(64px,10vw,120px)]">€ 299</div>
-              <div className="text-[13px] text-text-3 mt-2 font-mono tracking-wider uppercase">Einmalig</div>
+              <div className="text-[13px] text-text-3 mt-2 font-mono tracking-wider uppercase">Einmalzahlung</div>
             </div>
 
             <ul className="space-y-3 mb-9 text-[15.5px] text-text-2 leading-snug max-w-lg mx-auto">
               {[
-                "5 Phasen · 196 Items · 90-Tage-Programm",
-                "AI-Brand-Prompt-Bibliothek (Wert € 797)",
-                "DACH-Compliance-Pack (Wert € 497)",
-                "Pre-Sale-Shopify-Templates (Wert € 597)",
-                "Geprüfte EU-Lieferanten-Datenbank (Wert € 297)",
-                "Founder-OS-Inside-Channel · Lifetime (Wert € 397)",
-                "Founder-Email-Support · 24h-Antwort (Wert € 497)",
-                "Discovery-Call mit Moritz · 15 Min gratis",
+                "Hauptkurs · 5 Schritte · 196 Lektionen · 90-Tage-Plan",
+                "KI-Prompt-Bibliothek für deine Marke (Wert 797 €)",
+                "Rechts-Pack für DACH: Impressum, AGB, Datenschutz (Wert 497 €)",
+                "Shopify-Vorlagen für Vorbestellungen (Wert 597 €)",
+                "EU-Lieferanten-Datenbank, vorgeprüft (Wert 297 €)",
+                "Inside-Channel mit Updates · für immer (Wert 397 €)",
+                "E-Mail-Support von Moritz · Antwort in 24 h (Wert 497 €)",
+                "15-Minuten-Gespräch mit Moritz · gratis",
               ].map((b) => (
                 <li key={b} className="check-bullet"><span>{b}</span></li>
               ))}
@@ -381,7 +379,7 @@ export default function Home() {
 
             <div className="text-center">
               <a href="#" className="btn-gold w-full max-w-md mx-auto justify-center">
-                Jetzt Zugriff sichern — € 299
+                Jetzt starten — 299 €
               </a>
               <div className="mt-6 flex items-center justify-center gap-2.5 flex-wrap">
                 {[
@@ -410,19 +408,19 @@ export default function Home() {
               Was wir NICHT versprechen
             </div>
             <h2 className="h-section text-[clamp(30px,4.5vw,50px)] mb-5">
-              Kauf das nicht, wenn du keine echte <span className="text-red">Marke</span> bauen willst.
+              Kauf das nicht, wenn du eigentlich nur <span className="text-red">träumen</span> willst.
             </h2>
             <p className="text-[16px] text-text-2 leading-relaxed">
-              Wir haben uns überlegt, ob wir das auf die Page setzen. Aber Hard-Sell-Garantien, die niemand einlösen kann, sind das Problem dieser Branche. Hier ist die Wahrheit:
+              Wir haben überlegt, ob wir diesen Teil überhaupt aufschreiben. Aber die leeren Versprechen anderer sind genau der Grund, warum die meisten Anfänger nach drei Monaten frustriert aufgeben. Also lieber jetzt ehrlich als später enttäuscht:
             </p>
           </div>
 
           <ul className="space-y-1 mb-9">
             {[
-              <>Wir versprechen dir <strong>keinen Umsatz.</strong> Umsatz hängt zu 90 % von deiner Execution ab.</>,
-              <>Wir versprechen dir <strong>kein passives Einkommen.</strong> D2C ist Arbeit, jeden Tag.</>,
-              <>Wir versprechen dir <strong>keinen Overnight Success.</strong> 90 Tage strukturierte Arbeit, mindestens.</>,
-              <>Wir versprechen dir <strong>keine Garantien</strong>, die wir nicht einhalten können.</>,
+              <>Wir versprechen dir <strong>keinen Umsatz.</strong> 90 % deines Ergebnisses hängen davon ab, was du wirklich tust — nicht davon, was du kaufst.</>,
+              <>Wir versprechen dir <strong>kein passives Einkommen.</strong> Eine Marke aufzubauen ist Arbeit, jeden Tag. Wer dir was anderes verkauft, lügt.</>,
+              <>Wir versprechen dir <strong>keinen Überraschungserfolg in 30 Tagen.</strong> Es sind mindestens 90 Tage echte Arbeit — in deinem Tempo, aber dranbleiben musst du selbst.</>,
+              <>Wir versprechen dir <strong>keine Garantien</strong>, die wir nicht halten können.</>,
             ].map((t, i) => (
               <li key={i} className="x-bullet check-bullet py-4 border-b border-line text-[16px] text-text-2 leading-snug">
                 <span>{t}</span>
@@ -431,7 +429,7 @@ export default function Home() {
           </ul>
 
           <p className="text-[19px] lg:text-[22px] font-display font-bold leading-snug text-navy">
-            Was wir dir versprechen: <span className="text-red">das Framework, mit dem unsere Agentur-Kunden bauen.</span> Wenn du es 1:1 umsetzt, hast du eine Marke. Wenn nicht, hast du dein Geld nicht verdient.
+            Was wir dir versprechen: <span className="text-red">genau das System, mit dem unsere Agentur-Kunden Marken aufbauen, die Millionen umsetzen.</span> Wenn du es Schritt für Schritt umsetzt, hast du am Ende eine eigene Marke. Wenn nicht — dann hast du das Geld auch nicht in dich investiert.
           </p>
         </div>
       </section>
@@ -448,13 +446,13 @@ export default function Home() {
 
           <div className="rounded-2xl overflow-hidden border border-line bg-white">
             {[
-              { q: `Brauche ich vorher Erfahrung im E-Commerce?`, a: `Nein. Founder OS ist explizit für Anfänger gebaut — von Pre-Revenue, ohne D2C-Erfahrung. Phase 1 startet beim Founder-Audit, nicht bei der Shopify-Theme-Auswahl. Was du brauchst: 5–15 Stunden pro Woche für rund 90 Tage. Bereitschaft, Outputs zu liefern statt nur zu konsumieren.` },
-              { q: `Brauche ich Startkapital für Inventar oder Ads?`, a: `Phase 1 und 2 kosten dich nichts außer Zeit. Pflicht-Outputs: 20 echte Kunden-Calls und ≥50 Pre-Order-Optins — beides ohne Inventar machbar. Erst nach Validierung gehst du in Phase 3 und investierst gezielt. Das Pre-Sold-Modell ist explizit dafür gebaut, dass du kein Geld verbrennst, bevor echte Nachfrage da ist.` },
-              { q: `Was, wenn ich noch keine Produktidee habe?`, a: `Dann ist Phase 1 dein Startpunkt. Wir gehen vom Founder-Lens-Audit über Market-Mapping bis zur Produkt-Hypothese — explizit drin.` },
-              { q: `Wie viel Zeit brauche ich pro Woche?`, a: `5–15 Stunden ist realistisch. Phase 1 + 2 sind kürzer (1–3 Wochen pro Phase), Phase 3 ist mit 4–6 Wochen die intensivste.` },
-              { q: `Was, wenn AI in 12 Monaten alles verändert?`, a: `Founder OS ist AI-native gebaut, nicht AI-resistent. Die SOPs nutzen AI als Werkzeug, nicht als Ersatz für Strategie. Wenn AI besser wird, wird auch der Output besser — die Struktur bleibt. Lifetime-Updates inkludiert.` },
-              { q: `Warum nur € 299? Was ist der Haken?`, a: `Kein Haken. D2C-Anfänger haben kein € 5.000-Budget für Masterminds. Wir wollen das Material zu den Leuten bringen, für die es gebaut ist. Backend-Logik ehrlich: ein Teil der Käufer wird später Agentur-Kunde. Wenn nicht — der Kurs steht für sich.` },
-              { q: `Gibt's eine Geld-zurück-Garantie?`, a: `Ja, 14 Tage. Wenn die ersten zwei Wochen Inhalt nicht halten, was wir versprechen, schreib uns auf WhatsApp und wir erstatten 100 %, ohne Diskussion. Was wir nicht garantieren: dass du Umsatz machst.` },
+              { q: `Ich habe null Erfahrung im Online-Handel. Ist das überhaupt was für mich?`, a: `Ja — genau für dich ist Founder OS gemacht. Schritt 1 fängt nicht beim Shopify-Theme an, sondern bei dir: Was kannst du, was willst du, für wen ist das gemacht. Wir setzen null Vorwissen voraus. Wenn du eine E-Mail schreiben und einen Browser bedienen kannst, reicht das. Was du brauchst: 5–15 Stunden pro Woche und die Bereitschaft, wirklich umzusetzen, nicht nur zu schauen.` },
+              { q: `Brauche ich Geld für Lager, Werbung oder eine GmbH?`, a: `Nein. Schritt 1 und 2 (Idee klären + Nachfrage prüfen) kosten dich nichts außer Zeit. In Schritt 2 sammelst du 20 echte Gespräche und 50+ Vorbestellungen — alles ohne einen Cent für Ware. Erst wenn du weißt, dass Fremde wirklich kaufen wollen, gehst du in Schritt 3 und investierst gezielt. Das ist der ganze Sinn der Reihenfolge: kein Geld verbrennen, bevor du Nachfrage hast. Ein Kleingewerbe reicht für den Start — keine GmbH nötig.` },
+              { q: `Ich habe noch keine Produktidee. Bin ich raus?`, a: `Im Gegenteil — du bist genau richtig. Schritt 1 ist explizit dafür da: Wir gehen mit dir durch, was du heute liefern könntest, welche Probleme du in deinem Umfeld siehst und welche Marktlücken offen sind. Du startest also nicht ins Blaue, sondern mit einer Idee, die du selbst tragen kannst.` },
+              { q: `Wie viel Zeit pro Woche brauche ich realistisch?`, a: `5–15 Stunden pro Woche reichen. Schritt 1 und 2 sind kürzer (1–3 Wochen je), Schritt 3 ist mit 4–6 Wochen der intensivste. Wir sehen Leute, die das in 3 Monaten Vollzeit durchziehen — und Leute, die nebenher 6 Monate brauchen. Beides ist okay, solange du die Schritte nicht überspringst. Du bestimmst dein Tempo.` },
+              { q: `Veraltet das Ganze nicht in einem Jahr durch KI?`, a: `Im Gegenteil. KI ist im Kurs fest als Werkzeug eingebaut — wir nutzen sie für Kundenprobleme, Texte, Werbung. Wenn KI besser wird, wird auch dein Output besser. Was nicht veraltet: die Reihenfolge. Erst Nachfrage prüfen, dann investieren — das gilt seit 50 Jahren und wird auch 2030 noch gelten. Alle Updates sind dauerhaft inklusive.` },
+              { q: `Warum nur 299 €? Wo ist der Haken?`, a: `Kein Haken. Bewusste Entscheidung: Anfänger haben kein 5.000-€-Budget für einen Mastermind. Wir wollen, dass das Material zu den Leuten kommt, die es wirklich brauchen. Ehrlich: Ein Teil der Käufer wird später Agentur-Kunde von BB Brands — das ist der Plan dahinter, und wir sagen's offen. Aber wenn du nie in den Agentur-Bereich willst, ist das vollkommen okay. Der Kurs steht für sich.` },
+              { q: `Was, wenn mir der Kurs nicht gefällt?`, a: `14 Tage Geld zurück, ohne Diskussion. Du schaust dir die ersten zwei Wochen an, und wenn der Kurs nicht hält, was wir versprechen, schreibst du uns kurz auf WhatsApp und bekommst dein Geld zurück. Punkt. Was wir nicht zurückerstatten können: deine Zeit. Deshalb: nur kaufen, wenn du wirklich umsetzen willst.` },
             ].map((f, i) => (
               <details key={i} className="faq-row">
                 <summary className="px-6 lg:px-8 py-5 flex items-center justify-between gap-4 text-[16px] tracking-tight hover:bg-bg-soft transition-colors">
@@ -471,16 +469,16 @@ export default function Home() {
       <section className="gradient-navy py-24 lg:py-32 text-white text-center">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <p className="font-display font-extrabold text-[clamp(28px,4.5vw,48px)] leading-tight text-white mb-3">
-            Entweder du lernst <span className="text-gold">strukturiert</span>.
+            Entweder du lernst es <span className="text-gold">strukturiert</span>.
           </p>
           <p className="font-display text-[clamp(20px,3vw,32px)] font-light text-white/60 italic mb-10">
-            Oder du zahlst später mit Zeit, Geld und Frustration.
+            Oder du zahlst es später mit Zeit, Geld und Frust.
           </p>
           <a href="#pricing" className="btn-gold">
-            Jetzt Zugriff sichern — € 299
+            Jetzt starten — 299 €
           </a>
           <div className="mt-6 font-mono text-[11px] text-white/40 uppercase tracking-[0.2em]">
-            Einmalig · 14-Tage-Garantie · Lifetime-Updates
+            Einmalzahlung · 14 Tage Geld zurück · Updates für immer
           </div>
         </div>
       </section>
