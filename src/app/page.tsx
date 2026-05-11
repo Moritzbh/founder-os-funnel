@@ -396,15 +396,7 @@ export default function Home() {
       </section>
 
       {/* ============ PRICING ============ */}
-      <section
-        id="pricing"
-        className="cream-photo-bg m-section-pad py-12 lg:py-16"
-        style={{
-          ["--photo-bg" as string]: "url('/pricing-bg.jpg')",
-          ["--photo-opacity" as string]: "0.28",
-          ["--photo-grayscale" as string]: "0%",
-        }}
-      >
+      <section id="pricing" className="cream-photo-bg pos-right m-section-pad py-12 lg:py-16">
         <div className="max-w-2xl mx-auto px-5 lg:px-10">
           <div className="text-center mb-6">
             <div className="eyebrow mb-2">Preis · Eine Zahl</div>
