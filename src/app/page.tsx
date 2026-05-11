@@ -108,6 +108,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ QUALIFICATION-BANNER (Baulig-Pattern) ============ */}
+      <section className="bg-bg-dark text-white relative overflow-hidden border-t border-line">
+        <div className="grain absolute inset-0"></div>
+        <div className="max-w-5xl mx-auto px-6 lg:px-10 py-10 lg:py-14 relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-10">
+            <div className="flex-shrink-0 stamp stamp-blue rotate-[-6deg]" style={{ background: "var(--color-orange)" }}>
+              <span className="stamp-top">Lies</span>
+              <span className="stamp-mid">!</span>
+              <span className="stamp-bot">Achtung</span>
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="font-mono text-[11px] font-bold tracking-[0.18em] uppercase text-orange mb-2">
+                Achtung · Wer das hier ist für
+              </div>
+              <p className="font-display font-extrabold text-[clamp(22px,3vw,32px)] leading-tight text-white mb-2">
+                Nur für <em className="text-orange not-italic">DACH-Solo-Founder</em> Pre-Revenue, die ihren ersten D2C-Launch wollen.
+              </p>
+              <p className="text-[14.5px] text-white/70 max-w-2xl">
+                Wenn du schon &gt;5k MRR machst, brauchst du das hier nicht — dann ist die <a href="https://bb-brands.de/audit/" className="text-orange underline underline-offset-2 font-semibold">BB-Brands-Agentur</a> der richtige Pfad. Wenn du noch 0 € Umsatz hast, eine Idee oder ein Produkt-Hypothese — bleib hier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============ 2 · FOUNDER-TALK / VIDEO-PLATZHALTER ============ */}
       <section className="border-t border-line bg-bg-soft">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-14 items-center">
@@ -436,9 +461,18 @@ export default function Home() {
                 Jetzt Zugriff sichern
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
-              <p className="text-[12px] text-white/40 mt-5 font-mono tracking-wider">
-                Stripe · Klarna · PayPal · Apple Pay
-              </p>
+              <div className="mt-7 flex flex-col items-center gap-3">
+                <div className="flex items-center gap-4 flex-wrap justify-center">
+                  {["Stripe", "Klarna", "PayPal", "Apple Pay", "Visa"].map((p) => (
+                    <span key={p} className="text-[11px] font-mono text-white/70 font-bold px-3 py-1.5 bg-white/[0.06] border border-white/10 rounded-full tracking-wider">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-[11px] text-white/40 font-mono tracking-wider flex items-center gap-2">
+                  <span className="text-green">🔒</span> SSL-verschlüsselt · DSGVO-konform · 14 Tage Rückgabe
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -476,6 +510,63 @@ export default function Home() {
           <p className="text-[19px] lg:text-[22px] font-bold leading-snug text-text">
             Was wir dir versprechen: <span className="text-orange">das Framework, mit dem unsere Agentur-Kunden bauen.</span> Wenn du es 1:1 umsetzt, hast du eine Marke. Wenn nicht, hast du dein Geld nicht verdient.
           </p>
+        </div>
+      </section>
+
+      {/* ============ AUTHOR-BIO (Baulig-Pattern) ============ */}
+      <section className="border-t border-line bg-bg-soft">
+        <div className="max-w-5xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+          <div className="text-center mb-12">
+            <div className="eyebrow mb-3">Hinter Founder OS</div>
+            <h2 className="h-section text-[clamp(30px,4.5vw,50px)]">
+              Wer das <em>gebaut</em> hat.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-[260px_1fr] gap-10 lg:gap-14 items-center max-w-4xl mx-auto">
+            <div className="relative">
+              <div
+                className="aspect-[4/5] bg-text/95 overflow-hidden bg-center bg-cover shadow-[0_24px_60px_-24px_rgba(0,0,0,0.4)]"
+                style={{ backgroundImage: "url('/founder-moritz.jpg')" }}
+              >
+                <div className="w-full h-full flex items-center justify-center text-white/30 font-mono text-[10px] uppercase tracking-widest pointer-events-none">
+                  <span className="opacity-50">/public/founder-moritz.jpg</span>
+                </div>
+              </div>
+              <div className="absolute -bottom-3 -right-3 stamp stamp-blue">
+                <span className="stamp-top">2024</span>
+                <span className="stamp-mid">BB</span>
+                <span className="stamp-bot">Brands</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="h-display text-[clamp(32px,4vw,46px)] mb-4">
+                Moritz Bohmbach.
+              </h3>
+              <p className="text-[14px] font-mono text-text-3 uppercase tracking-[0.15em] mb-6">
+                Solo Operator · BB Brands · seit 2024
+              </p>
+              <div className="space-y-4 text-[16px] text-text-2 leading-relaxed">
+                <p>
+                  Ich baue mit BB Brands D2C-Marken operativ auf — kein Berater-Geschwafel, kein Junior-Team. Ich sitze am Shop, ich schreibe die Ads, ich baue die Funnel. Das hier ist mein Solo-Programm, in das ich alle SOPs aus zwei Jahren Agentur-Arbeit gepackt habe.
+                </p>
+                <p>
+                  Vorher: 6+ Jahre E-Commerce, mehrere eigene Brands gebaut (manche gescheitert, manche live), DACH-Compliance-Spezialisierung. Founder OS ist das, was ich mir selbst gewünscht hätte, als ich angefangen habe.
+                </p>
+              </div>
+
+              <div className="mt-7 inline-flex items-center gap-3 px-4 py-3 bg-bg-white border border-line rounded-sm">
+                <div className="font-display italic text-[26px] text-orange leading-none">M</div>
+                <div>
+                  <div className="text-[11px] font-mono text-text-3 uppercase tracking-wider">Direkter Draht</div>
+                  <a href="mailto:info@bb-brands.de" className="text-[14px] font-semibold link-underline">
+                    info@bb-brands.de
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
