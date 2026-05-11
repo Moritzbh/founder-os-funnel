@@ -57,15 +57,13 @@ export default function Home() {
           {/* Product Card */}
           <div className="product-card">
             <div className="flex gap-6 mb-7">
-              {/* Course Cover Mockup */}
-              <div className="flex-shrink-0 w-[120px] aspect-[3/4] bg-navy rounded-lg overflow-hidden relative shadow-xl flex flex-col justify-end p-3 text-white"
-                   style={{ background: "linear-gradient(135deg, #1b2138 0%, #2a3252 100%)" }}>
-                <div className="text-[9px] font-mono uppercase tracking-widest opacity-60 mb-1">DACH · 2026</div>
-                <div className="font-display font-extrabold text-[16px] leading-none mb-1">FOUNDER<br/>OS</div>
-                <div className="text-[10px] opacity-70 font-medium">Das Agentur-Framework</div>
-                <div className="absolute top-3 right-3 px-2 py-0.5 bg-gold text-navy text-[8px] font-extrabold rounded-sm uppercase tracking-wider">
-                  v1
-                </div>
+              {/* Course Cover — Higgsfield v4 */}
+              <div className="flex-shrink-0 w-[120px] aspect-[3/4] rounded-lg overflow-hidden relative shadow-xl">
+                <img
+                  src="/founder-os-cover.png"
+                  alt="Founder OS — Die 90-Tage Pre-Sold Launch Methode"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Price */}
