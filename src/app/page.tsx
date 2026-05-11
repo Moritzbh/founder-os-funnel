@@ -342,26 +342,26 @@ export default function Home() {
       </section>
 
       {/* ============ PRICING ============ */}
-      <section id="pricing" className="cream-photo-bg pos-right py-20 lg:py-28">
-        <div className="max-w-3xl mx-auto px-6 lg:px-10">
-          <div className="text-center mb-10">
-            <div className="eyebrow mb-3">Preis · Eine Zahl</div>
-            <h2 className="h-section text-[clamp(34px,5vw,58px)] mb-4">
+      <section id="pricing" className="cream-photo-bg pos-right py-12 lg:py-16">
+        <div className="max-w-2xl mx-auto px-6 lg:px-10">
+          <div className="text-center mb-6">
+            <div className="eyebrow mb-2">Preis · Eine Zahl</div>
+            <h2 className="h-section text-[clamp(26px,3.5vw,40px)] mb-2">
               Sicher dir jetzt deinen <span className="text-red">Platz</span>.
             </h2>
-            <p className="text-[16px] text-text-3 max-w-xl mx-auto">
-              Einmalzahlung. Kein Abo. Kein Upsell. 14 Tage Geld zurück — ohne Wenn und Aber.
+            <p className="text-[14px] text-text-3 max-w-md mx-auto">
+              Einmalzahlung. Kein Abo. Kein Upsell. 14 Tage Geld zurück.
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-[0_24px_80px_-24px_rgba(27,33,56,0.2)] p-8 lg:p-12">
-            <div className="text-center mb-8">
-              <div className="price-strikethrough mb-1">€ 499</div>
-              <div className="price-sale text-[clamp(64px,10vw,120px)]">€ 299</div>
-              <div className="text-[13px] text-text-3 mt-2 font-mono tracking-wider uppercase">Einmalzahlung</div>
+          <div className="bg-white rounded-2xl shadow-[0_20px_60px_-20px_rgba(27,33,56,0.18)] p-6 lg:p-8">
+            <div className="text-center mb-5">
+              <div className="price-strikethrough text-[20px] mb-0.5">€ 499</div>
+              <div className="price-sale text-[clamp(48px,7vw,80px)]">€ 299</div>
+              <div className="text-[11px] text-text-3 mt-1 font-mono tracking-wider uppercase">Einmalzahlung</div>
             </div>
 
-            <ul className="space-y-3 mb-9 text-[15.5px] text-text-2 leading-snug max-w-lg mx-auto">
+            <ul className="space-y-2 mb-6 text-[14px] text-text-2 leading-snug max-w-md mx-auto">
               {[
                 "Hauptkurs · 5 Schritte · 196 Lektionen · 90-Tage-Plan",
                 "KI-Prompt-Bibliothek für deine Marke (Wert 797 €)",
@@ -377,10 +377,10 @@ export default function Home() {
             </ul>
 
             <div className="text-center">
-              <a href="#" className="btn-gold w-full max-w-md mx-auto justify-center">
+              <a href="#" className="btn-gold w-full max-w-sm mx-auto justify-center">
                 Jetzt starten — 299 €
               </a>
-              <div className="mt-6 flex items-center justify-center gap-2.5 flex-wrap">
+              <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
                 {[
                   { src: "/payments/paypal.svg", alt: "PayPal" },
                   { src: "/payments/klarna.svg", alt: "Klarna" },
@@ -388,10 +388,10 @@ export default function Home() {
                   { src: "/payments/visa.svg", alt: "VISA" },
                   { src: "/payments/applepay.svg", alt: "Apple Pay" },
                 ].map((p) => (
-                  <img key={p.alt} src={p.src} alt={p.alt} className="h-7 w-auto object-contain" />
+                  <img key={p.alt} src={p.src} alt={p.alt} className="h-6 w-auto object-contain" />
                 ))}
               </div>
-              <p className="text-[11px] text-text-3 mt-3 font-mono tracking-wider">
+              <p className="text-[10.5px] text-text-3 mt-2.5 font-mono tracking-wider">
                 🔒 SSL-verschlüsselt · DSGVO-konform · 14 Tage Rückgabe
               </p>
             </div>
