@@ -325,7 +325,7 @@ export default function Home() {
                 Ich baue mit BB Brands echte Online-Marken auf — kein Berater-Geschwätz, kein Junior-Team. Ich sitze selbst am Shop, schreibe die Werbung, baue die Verkaufsseiten. Founder OS ist mein Solo-Programm, in das ich alles reingepackt habe, was wir intern in zwei Jahren Agentur-Arbeit aufgebaut haben.
               </p>
               <p className="text-[17px] text-text-2 leading-relaxed mb-4">
-                Vorher: 6+ Jahre im Online-Handel, mehrere eigene Marken gebaut (manche gescheitert, manche bis heute live), Spezialgebiet Rechtliches in DACH. Founder OS ist das, was ich mir selbst gewünscht hätte, als ich angefangen habe.
+                Vorher: 4 Jahre im Online-Handel, mehrere eigene Marken gebaut (manche gescheitert, manche bis heute live), Spezialgebiet Markenaufbau und digitale Präsenz, die verkauft. Founder OS ist das, was ich mir selbst gewünscht hätte, als ich angefangen habe.
               </p>
               <p className="text-[17px] text-text-2 leading-relaxed mb-7">
                 Was du bei mir nicht bekommst: Mastermind-Floskeln, leere Garantien, Lambo-Bilder. Was du bekommst: den exakten Plan + direkten E-Mail-Draht zu mir.
