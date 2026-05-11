@@ -309,7 +309,7 @@ export default function Home() {
             <div className="relative">
               <div
                 className="aspect-[4/5] bg-navy rounded-2xl overflow-hidden shadow-[0_24px_60px_-24px_rgba(27,33,56,0.4)] bg-center bg-cover"
-                style={{ backgroundImage: "url('/founder-moritz.jpg')" }}
+                style={{ backgroundImage: "url('/founder-bio.jpg')" }}
               >
                 <div className="w-full h-full flex items-end p-5 text-white bg-gradient-to-t from-navy/70 via-transparent to-transparent">
                   <div>
