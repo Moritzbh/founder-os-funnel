@@ -1,20 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #fafaf7;
-  --color-bg-card: #ffffff;
-  --color-bg-soft: #f1f1ec;
-  --color-bg-deep: #0a0a0a;
+  --color-bg: #f4f0e7;
+  --color-bg-white: #ffffff;
+  --color-bg-soft: #faf6ef;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-darker: #050505;
+  --color-blue: #0305C6;
+  --color-blue-deep: #02038F;
+  --color-blue-soft: #e8e8fb;
+  --color-orange: #FF6B3D;
+  --color-orange-deep: #cc4a1f;
+  --color-orange-soft: #fff4ee;
   --color-text: #0a0a0a;
-  --color-text-2: #3a3a3a;
-  --color-text-3: #666666;
-  --color-line: #e5e5e2;
-  --color-accent: #ff6b3d;
-  --color-accent-bg: #fff4ee;
-  --color-accent-deep: #cc4a1f;
-  --font-sans: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
-  --font-mono: "SF Mono", Menlo, monospace;
+  --color-text-2: #2a2a2a;
+  --color-text-3: #6b6b6b;
+  --color-line: #e8e3d6;
+  --color-line-soft: #f0ebde;
+  --color-green: #16a34a;
+  --color-green-soft: #ecfdf5;
+  --color-red: #dc2626;
+  --color-red-soft: #fef2f2;
+  --color-amber: #d97706;
+  --color-amber-soft: #fffbeb;
+  --font-display: var(--font-saira), "Saira Condensed", sans-serif;
+  --font-body: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html {
@@ -24,8 +34,93 @@ html {
 body {
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "ss01", "cv01";
 }
+
+/* Baulig-Style Stamp (rotated number sticker) */
+.stamp {
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--color-orange);
+  color: white;
+  padding: 11px 16px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  transform: rotate(-6deg);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+.stamp .stamp-top { font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.9; margin-bottom: 3px; }
+.stamp .stamp-mid { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+.stamp .stamp-bot { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.9; margin-top: 3px; }
+.stamp-blue { background: var(--color-blue); }
+.stamp-dark { background: var(--color-bg-dark); }
+
+/* Subtle grain texture overlay for hero/dark sections */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Display Headings — Saira Condensed Black */
+.h-display { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.015em; line-height: 0.98; }
+.h-display em { font-style: italic; font-weight: 500; color: var(--color-orange); }
+.h-section { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.01em; line-height: 1.05; }
+.h-section em { font-style: italic; font-weight: 500; color: var(--color-orange); }
+
+.eyebrow { font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-blue); }
+.eyebrow-orange { color: var(--color-orange); }
+.eyebrow-on-dark { color: var(--color-orange); }
+
+/* Animated underline on hover */
+.link-underline { position: relative; }
+.link-underline::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px;
+  background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.link-underline:hover::after { transform: scaleX(1); }
+
+/* FAQ accordion */
+details.faq-row { border-bottom: 1px solid var(--color-line); }
+details.faq-row[open] summary::after { transform: rotate(45deg); }
+details.faq-row summary { list-style: none; cursor: pointer; }
+details.faq-row summary::-webkit-details-marker { display: none; }
+details.faq-row summary::after {
+  content: "+"; font-size: 28px; font-weight: 300; color: var(--color-blue);
+  transition: transform 0.2s ease;
+}
+
+/* Up-arrow check marker (Baulig-pattern) */
+.up-arrow::before {
+  content: "↑ ";
+  color: var(--color-green);
+  font-weight: 800;
+}
+
+/* BB Logo - mirrored first B */
+.bb-logo .mirror {
+  display: inline-block;
+  transform: scaleX(-1);
+  color: var(--color-blue);
+}
+
+/* Phase bar fill animation */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+.bar-fill { animation: fillBar 1.2s ease-out 0.3s both; }
+
+/* Pulse for live status */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot { animation: pulse-dot 2s infinite; }
