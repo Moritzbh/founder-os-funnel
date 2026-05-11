@@ -88,9 +88,15 @@ export default function Home() {
             </a>
 
             {/* Payment Icons */}
-            <div className="mt-5 flex items-center justify-center gap-3 flex-wrap">
-              {["PayPal", "Klarna", "Mastercard", "VISA", "Apple Pay"].map((p) => (
-                <span key={p} className="text-[11px] font-mono font-bold text-text-3 px-2.5 py-1 bg-bg-soft rounded-md">{p}</span>
+            <div className="mt-5 flex items-center justify-center gap-2 flex-wrap">
+              {[
+                { src: "/payments/paypal.svg", alt: "PayPal" },
+                { src: "/payments/klarna.svg", alt: "Klarna" },
+                { src: "/payments/mastercard.svg", alt: "Mastercard" },
+                { src: "/payments/visa.svg", alt: "VISA" },
+                { src: "/payments/applepay.svg", alt: "Apple Pay" },
+              ].map((p) => (
+                <img key={p.alt} src={p.src} alt={p.alt} className="h-6 w-auto object-contain" />
               ))}
             </div>
 
@@ -98,17 +104,6 @@ export default function Home() {
               * Sofortiger Zugriff · Lifetime-Updates · 14 Tage Garantie
             </p>
           </div>
-        </div>
-
-        {/* Authority-Transfer-Statement */}
-        <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-20 lg:mt-28 text-center">
-          <div className="eyebrow mb-5">Aus der Praxis</div>
-          <p className="font-display font-extrabold text-[clamp(24px,3.2vw,38px)] leading-[1.15] text-navy mb-5">
-            Wir betreuen Unternehmen, die <span className="text-red">2 Mio +</span> im Jahr mit ihrer E-Commerce-Brand umsetzen. Jetzt zeigen wir dir unser Framework, wie das geht.
-          </p>
-          <p className="font-display font-bold text-[clamp(18px,2.4vw,26px)] text-navy/80 leading-tight">
-            Das einzige, was du tun musst: <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">es 1:1 umsetzen.</span>
-          </p>
         </div>
 
         {/* Trust Logo Strip */}
@@ -121,6 +116,17 @@ export default function Home() {
             <span className="trust-strip-item">DSGVO-konform</span>
             <span className="trust-strip-item">Stripe Verified</span>
           </div>
+        </div>
+
+        {/* Authority-Transfer-Statement */}
+        <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-16 lg:mt-24 text-center">
+          <div className="eyebrow mb-5">Aus der Praxis</div>
+          <p className="font-display font-extrabold text-[clamp(24px,3.2vw,38px)] leading-[1.15] text-navy mb-5">
+            Wir betreuen Unternehmen, die <span className="text-red">2 Mio +</span> im Jahr mit ihrer E-Commerce-Brand umsetzen. Jetzt zeigen wir dir unser Framework, wie das geht.
+          </p>
+          <p className="font-display font-bold text-[clamp(18px,2.4vw,26px)] text-navy/80 leading-tight">
+            Das einzige, was du tun musst: <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">es 1:1 umsetzen.</span>
+          </p>
         </div>
       </section>
 
@@ -366,9 +372,15 @@ export default function Home() {
               <a href="#" className="btn-gold w-full max-w-md mx-auto justify-center">
                 Jetzt Zugriff sichern — € 299
               </a>
-              <div className="mt-5 flex items-center justify-center gap-2 flex-wrap">
-                {["PayPal", "Klarna", "Mastercard", "VISA", "Apple Pay", "Stripe"].map((p) => (
-                  <span key={p} className="text-[10px] font-mono font-bold text-text-3 px-2 py-1 bg-bg-soft rounded">{p}</span>
+              <div className="mt-6 flex items-center justify-center gap-2.5 flex-wrap">
+                {[
+                  { src: "/payments/paypal.svg", alt: "PayPal" },
+                  { src: "/payments/klarna.svg", alt: "Klarna" },
+                  { src: "/payments/mastercard.svg", alt: "Mastercard" },
+                  { src: "/payments/visa.svg", alt: "VISA" },
+                  { src: "/payments/applepay.svg", alt: "Apple Pay" },
+                ].map((p) => (
+                  <img key={p.alt} src={p.src} alt={p.alt} className="h-7 w-auto object-contain" />
                 ))}
               </div>
               <p className="text-[11px] text-text-3 mt-3 font-mono tracking-wider">
