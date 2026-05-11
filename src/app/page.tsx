@@ -9,8 +9,8 @@ export default function Home() {
 
       {/* ============ HERO ============ */}
       <section className="sky-bg pt-8 lg:pt-10 pb-16 lg:pb-24">
-        {/* Logo + Back-Link */}
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16 flex items-center justify-between flex-wrap gap-4">
+        {/* Logo + Back-Link (links, gestapelt) */}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16 flex flex-col items-start gap-3">
           <a href="https://bb-brands.de" className="bb-logo" aria-label="BB Brands Startseite — zurück zur Hauptseite" title="Zurück zur Hauptseite">
             <span className="bb-mark-mirror">B</span>Brands
             <span className="bb-logo-sub">
@@ -23,8 +23,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 text-[13px] font-medium text-text-3 hover:text-bb-blue transition-colors group"
           >
             <span className="transition-transform group-hover:-translate-x-0.5">←</span>
-            <span className="hidden sm:inline">Zurück zur Hauptseite</span>
-            <span className="sm:hidden">Hauptseite</span>
+            Zurück zur Hauptseite
           </a>
         </div>
 
