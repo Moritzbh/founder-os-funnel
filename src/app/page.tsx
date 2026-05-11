@@ -11,7 +11,7 @@ export default function Home() {
       <section className="sky-bg pt-8 lg:pt-10 pb-16 lg:pb-24">
         {/* Logo */}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16">
-          <a href="https://bb-brands.de" className="inline-flex items-center gap-2 font-display font-extrabold text-[18px] tracking-tight text-navy">
+          <a href="https://bb-brands.de" className="inline-flex items-center gap-2 font-display font-extrabold text-[18px] tracking-tight text-bb-blue">
             <span className="inline-block transform -scale-x-100">B</span>Brands
             <span className="text-text-3 mx-1 font-normal">·</span>
             <span className="text-red">FOUNDER OS</span>
@@ -479,7 +479,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
           <div>
             <div className="font-display font-extrabold text-white text-[16px]">
-              <span className="inline-block transform -scale-x-100">B</span>Brands <span className="text-white/30 mx-1">·</span> <span className="text-red">FOUNDER OS</span>
+              <span className="inline-block transform -scale-x-100" style={{ color: "#4a5cff" }}>B</span><span style={{ color: "#4a5cff" }}>Brands</span> <span className="text-white/30 mx-1">·</span> <span className="text-red">FOUNDER OS</span>
             </div>
             <p className="text-[12px] mt-2 text-white/40">© 2026 BB Brands · Moritz Bohmbach</p>
           </div>

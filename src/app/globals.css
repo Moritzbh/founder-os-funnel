@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Backgrounds */
+  /* Backgrounds — Cream als alternierende Section-Fläche (BB-Brand-Konsistenz) */
   --color-bg: #ffffff;
-  --color-bg-soft: #f5f5f5;
-  --color-bg-sky: #eef2f7;
+  --color-bg-soft: #f5f1e8;       /* Cream — wie Hauptseite */
+  --color-bg-elev: #efe9da;       /* Cream-2 für Cards/Elevated */
+  --color-bg-sky: #eef1ff;        /* Brand-Blue-Tint statt kühlem Grau */
   --color-bg-navy: #1b2138;
   --color-bg-navy-deep: #0f1428;
 
-  /* Brand Colors — Ecom-House-Inspired */
+  /* Brand Colors — Ecom-House-Layout + BB-Brand-Akzente */
   --color-navy: #1b2138;
   --color-navy-deep: #0f1428;
   --color-navy-2: #2a3252;
   --color-gold: #ffc300;
   --color-gold-deep: #e5ac00;
-  --color-red: #e43b2c;
-  --color-red-deep: #c53224;
+  --color-red: #ff6b3d;           /* BB Signal-Orange statt Ecom-Red */
+  --color-red-deep: #e85a2c;      /* BB Orange-Hover */
+  --color-bb-blue: #0305c6;       /* BB Primary-Blue für Logo + subtile Akzente */
+  --color-bb-blue-deep: #02038f;
+  --color-bb-blue-tint: #eef1ff;
 
   /* Text */
   --color-text: #1b2138;
@@ -24,8 +28,8 @@
   --color-text-light: #9a9a9a;
 
   /* Lines + Utility */
-  --color-line: #e5e5e5;
-  --color-line-soft: #f0f0f0;
+  --color-line: #e8e8e3;          /* Cream-Tone-Line statt Pure-Grey */
+  --color-line-soft: #f0ebde;
   --color-green: #16a34a;
   --color-green-soft: #ecfdf5;
 
@@ -47,6 +51,11 @@
   --color-gold-deep: var(--color-gold-deep);
   --color-red: var(--color-red);
   --color-red-deep: var(--color-red-deep);
+  --color-bb-blue: var(--color-bb-blue);
+  --color-bb-blue-deep: var(--color-bb-blue-deep);
+  --color-bb-blue-tint: var(--color-bb-blue-tint);
+  --color-bg-elev: var(--color-bg-elev);
+  --color-bg-sky: var(--color-bg-sky);
   --color-text: var(--color-text);
   --color-text-2: var(--color-text-2);
   --color-text-3: var(--color-text-3);
@@ -69,11 +78,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hero Sky-BG — subtle cloud gradient */
+/* Hero Sky-BG — Brand-Blue-Tint statt kaltem Grau (subtil) */
 .sky-bg {
   background:
-    radial-gradient(ellipse at top, rgba(255, 255, 255, 0.95), rgba(238, 242, 247, 0.9)),
-    linear-gradient(180deg, #eef2f7 0%, #ffffff 60%);
+    radial-gradient(ellipse at top, rgba(255, 255, 255, 0.95), rgba(238, 241, 255, 0.85)),
+    linear-gradient(180deg, var(--color-bg-sky) 0%, #ffffff 65%);
   background-size: cover;
 }
 .sky-bg.with-image {
