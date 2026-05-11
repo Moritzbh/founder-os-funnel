@@ -260,6 +260,7 @@ export default function Home() {
                     </div>
                   </div>
                 ))}
+              </div>
 
               {/* MOBILE: Accordion — kompakt, ein-/ausklappbar */}
               <div className="m-phase-accordion max-w-2xl mx-auto px-5">
