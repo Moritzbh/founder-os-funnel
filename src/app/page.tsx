@@ -9,13 +9,22 @@ export default function Home() {
 
       {/* ============ HERO ============ */}
       <section className="sky-bg pt-8 lg:pt-10 pb-16 lg:pb-24">
-        {/* Logo */}
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16">
-          <a href="https://bb-brands.de" className="inline-flex items-center gap-2 font-display font-extrabold text-[18px] tracking-tight text-bb-blue">
-            <span className="inline-block transform -scale-x-100">B</span>Brands
-            <span className="text-text-3 mx-1 font-normal">·</span>
-            <span className="text-red">FOUNDER OS</span>
-            <span className="text-[10px] font-mono align-top text-text-3">™</span>
+        {/* Logo + Back-Link */}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16 flex items-center justify-between flex-wrap gap-4">
+          <a href="https://bb-brands.de" className="bb-logo" aria-label="BB Brands Startseite — zurück zur Hauptseite" title="Zurück zur Hauptseite">
+            <span className="bb-mark-mirror">B</span>Brands
+            <span className="bb-logo-sub">
+              Founder OS
+              <span className="bb-logo-sub-trademark">™</span>
+            </span>
+          </a>
+          <a
+            href="https://bb-brands.de"
+            className="inline-flex items-center gap-2 text-[13px] font-medium text-text-3 hover:text-bb-blue transition-colors group"
+          >
+            <span className="transition-transform group-hover:-translate-x-0.5">←</span>
+            <span className="hidden sm:inline">Zurück zur Hauptseite</span>
+            <span className="sm:hidden">Hauptseite</span>
           </a>
         </div>
 

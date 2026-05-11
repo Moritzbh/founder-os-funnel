@@ -36,6 +36,7 @@
   /* Fonts (filled by next/font in layout.tsx) */
   --font-display: var(--font-outfit), "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tight: var(--font-inter-tight), "Inter Tight", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Tailwind 4 — expose :root vars as Tailwind utilities */
@@ -126,6 +127,48 @@ body {
 
 /* @layer components — Tailwind 4 picks these up reliably */
 @layer components {
+  /* BB Brands Logo — 1:1 Specs aus bb-brands.de Hauptseite */
+  .bb-logo {
+    display: inline-flex;
+    align-items: baseline;
+    text-decoration: none;
+    color: var(--color-bb-blue);
+    font-family: var(--font-tight);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    transition: opacity 0.2s ease;
+  }
+  .bb-logo:hover {
+    text-decoration: none;
+    opacity: 0.82;
+  }
+  .bb-mark-mirror {
+    display: inline-block;
+    transform: scaleX(-1);
+    margin-right: -1px;
+  }
+  .bb-logo-sub {
+    margin-left: 12px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--color-red);
+    text-transform: uppercase;
+    position: relative;
+    top: -3px;
+  }
+  .bb-logo-sub-trademark {
+    font-size: 9px;
+    color: var(--color-text-3);
+    margin-left: 2px;
+    vertical-align: super;
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+
   .h-display {
     font-family: var(--font-display);
     font-weight: 800;
