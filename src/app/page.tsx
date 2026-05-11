@@ -4,13 +4,12 @@ export default function Home() {
 
       {/* ============ WARNING-BANNER (sticky-top) ============ */}
       <div className="warning-banner">
-        <strong>Achtung:</strong> Für DACH-Solo-Founder, die ihre erste D2C-Brand <u>Pre-Sold launchen</u> wollen
+        <strong>Achtung:</strong> Für Anfänger in DACH, die ihre erste eigene Online-Marke starten wollen — <u>ohne vorher Geld zu verbrennen</u>
       </div>
 
-      {/* ============ HERO ============ */}
-      <section className="sky-bg pt-8 lg:pt-10 pb-16 lg:pb-24">
-        {/* Logo + Back-Link */}
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 mb-12 lg:mb-16 flex items-center justify-between flex-wrap gap-4">
+      {/* ============ HEADER (eigene Bar oben, Logo links) ============ */}
+      <header className="bg-white border-b border-line">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-4 lg:py-5 flex items-center justify-between gap-4">
           <a href="https://bb-brands.de" className="bb-logo" aria-label="BB Brands Startseite — zurück zur Hauptseite" title="Zurück zur Hauptseite">
             <span className="bb-mark-mirror">B</span>Brands
             <span className="bb-logo-sub">
@@ -27,14 +26,17 @@ export default function Home() {
             <span className="sm:hidden">Hauptseite</span>
           </a>
         </div>
+      </header>
 
+      {/* ============ HERO ============ */}
+      <section className="sky-bg pt-12 lg:pt-20 pb-16 lg:pb-24">
         {/* Hero Headlines */}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center mb-14 lg:mb-20">
           <h1 className="h-display text-[clamp(48px,9vw,124px)] mb-5">
             FOUNDER OS
           </h1>
           <p className="font-body text-[clamp(18px,2.2vw,26px)] text-navy max-w-3xl mx-auto leading-snug font-normal">
-            Was 0-€-Founder in den ersten <strong className="font-bold">erfolgreichen Pre-Sold-Launch</strong> verwandelt.
+            Wie Anfänger mit 0 € Umsatz zur <strong className="font-bold">ersten Bestellung von Fremden</strong> kommen — ohne vorher Lager oder Werbung zu zahlen.
           </p>
         </div>
 
@@ -82,18 +84,18 @@ export default function Home() {
             {/* 3 Benefits */}
             <ul className="space-y-3.5 mb-7 text-[15px] text-text-2 leading-snug">
               <li className="check-bullet">
-                <span><strong>Pre-Sold-Launch</strong> statt 6 Monate Inventar-Verbrennen — die exakte Methode unserer Agentur.</span>
+                <span><strong>Erst Vorbestellungen, dann Lager kaufen</strong> — kein halbes Jahr Geld verbrennen ohne einen einzigen Verkauf.</span>
               </li>
               <li className="check-bullet">
-                <span>Vom <strong>Idee-Stadium zum ersten echten Käufer</strong> in 90 Tagen — mit harten Gates, kein Skip.</span>
+                <span>Vom <strong>ersten Gedanken zur ersten echten Bestellung</strong> in 90 Tagen — klare Schritte, keine Abkürzung.</span>
               </li>
               <li className="check-bullet">
-                <span>Das Framework hinter <strong>D2C-Brands ab 2024</strong>, AI-native gebaut, DACH-Compliance ready.</span>
+                <span>Das System hinter <strong>echten Online-Marken seit 2024</strong> — mit KI gebaut, rechtssicher für Deutschland, Österreich und Schweiz.</span>
               </li>
             </ul>
 
             <a href="#pricing" className="btn-gold w-full justify-center">
-              Jetzt Zugriff sichern
+              Jetzt starten
             </a>
 
             {/* Payment Icons */}
@@ -110,7 +112,7 @@ export default function Home() {
             </div>
 
             <p className="text-[11.5px] text-text-3 text-center mt-4">
-              * Sofortiger Zugriff · Lifetime-Updates · 14 Tage Garantie
+              * Sofort verfügbar · Updates für immer · 14 Tage Geld zurück
             </p>
           </div>
         </div>
@@ -131,10 +133,10 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-16 lg:mt-24 text-center">
           <div className="eyebrow mb-5">Aus der Praxis</div>
           <p className="font-display font-extrabold text-[clamp(24px,3.2vw,38px)] leading-[1.15] text-navy mb-5">
-            Wir betreuen Unternehmen, die <span className="text-red">2 Mio +</span> im Jahr mit ihrer E-Commerce-Brand umsetzen. Jetzt zeigen wir dir unser Framework, wie das geht.
+            Wir bauen Online-Marken auf, die <span className="text-red">mehrere Millionen Euro</span> im Jahr machen. Jetzt zeigen wir dir das System, mit dem das geht.
           </p>
           <p className="font-display font-bold text-[clamp(18px,2.4vw,26px)] text-navy/80 leading-tight">
-            Das einzige, was du tun musst: <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">es 1:1 umsetzen.</span>
+            Das Einzige, was du machen musst: <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">Schritt für Schritt umsetzen.</span>
           </p>
         </div>
       </section>
@@ -143,10 +145,10 @@ export default function Home() {
       <section className="cream-photo-bg pos-top py-20 lg:py-28">
         <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center mb-12 lg:mb-16">
           <h2 className="h-section text-[clamp(34px,5vw,58px)] mb-4">
-            Wer sollte Founder OS nutzen?
+            Ist Founder OS das Richtige für dich?
           </h2>
           <p className="text-[17px] text-text-3 max-w-2xl mx-auto leading-relaxed">
-            Wir filtern bewusst. Was wir liefern, ist für eine spezifische Stage gebaut — nicht für jeden Founder.
+            Wir sagen vorher klar, für wen das hier gemacht ist — und für wen nicht. Damit du keine Zeit und kein Geld verschwendest.
           </p>
         </div>
 
@@ -158,11 +160,11 @@ export default function Home() {
             </div>
             <ul className="space-y-3.5 text-[15px] text-text-2 leading-snug">
               {[
-                <>Du <strong>Pre-Revenue</strong> bist — 0 € Umsatz oder erste Versuche, die nicht skaliert haben.</>,
-                <>Du eine <strong>Idee oder ein Produkt-Konzept</strong> hast, aber keinen klaren Pfad zum Launch.</>,
-                <>Du in DACH operierst und <strong>BFSG, DSGVO, UWG</strong> ernst nimmst (oder solltest).</>,
-                <>Du bereit bist, <strong>5–15 Stunden pro Woche</strong> für 90 Tage strukturiert zu arbeiten.</>,
-                <>Du willst <strong>kein YouTube-Wissen, sondern echte Agentur-Systeme</strong> mit Pflicht-Outputs.</>,
+                <>Du noch <strong>null Umsatz</strong> machst — oder erste Versuche hattest, die nicht funktioniert haben.</>,
+                <>Du eine <strong>Idee oder ein Produkt im Kopf</strong> hast — aber nicht weißt, wie du daraus eine Marke machst, die wirklich verkauft.</>,
+                <>Du in <strong>Deutschland, Österreich oder der Schweiz</strong> verkaufen willst und das mit dem Rechtlichen ernst nimmst (oder solltest).</>,
+                <>Du bereit bist, <strong>5–15 Stunden pro Woche</strong> für 90 Tage echte Arbeit reinzustecken.</>,
+                <>Du willst <strong>kein zusammengesuchtes YouTube-Wissen, sondern ein bewährtes System</strong> mit klaren Ergebnissen pro Schritt.</>,
               ].map((t, i) => (
                 <li key={i} className="check-bullet"><span>{t}</span></li>
               ))}
@@ -176,11 +178,11 @@ export default function Home() {
             </div>
             <ul className="space-y-3.5 text-[15px] text-text-2 leading-snug">
               {[
-                <>Du schon &gt; <strong>5k MRR</strong> machst — dann ist die <a href="https://bb-brands.de/audit/" className="text-navy underline underline-offset-2 font-semibold">BB-Brands-Agentur</a> der richtige Pfad.</>,
-                <>Du <strong>passives Einkommen</strong> oder Overnight-Success suchst — D2C ist Arbeit, jeden Tag.</>,
-                <>Du <strong>nur konsumieren</strong> willst, ohne harte Outputs zu liefern.</>,
-                <>Du kein DACH-Markt bedienst — US-Konkurrenz hat eigene Compliance-Hürden.</>,
-                <>Du Umsatz-Garantien suchst — wir geben keine. Siehe Anti-Garantie weiter unten.</>,
+                <>Du schon mehr als <strong>5.000 € im Monat</strong> umsetzt — dann ist die <a href="https://bb-brands.de/audit/" className="text-navy underline underline-offset-2 font-semibold">BB-Brands-Agentur</a> der richtige Weg.</>,
+                <>Du <strong>passives Einkommen</strong> oder schnellen Reichtum suchst — eine Marke aufzubauen ist Arbeit, jeden Tag.</>,
+                <>Du <strong>nur zuschauen</strong> willst, ohne wirklich umzusetzen.</>,
+                <>Du nicht im <strong>deutschsprachigen Raum</strong> verkaufst — andere Länder haben andere Rechtsregeln.</>,
+                <>Du Umsatz-Garantien erwartest — wir geben keine. Siehe Anti-Garantie weiter unten.</>,
               ].map((t, i) => (
                 <li key={i} className="x-bullet check-bullet"><span>{t}</span></li>
               ))}
@@ -194,20 +196,20 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center mb-14 lg:mb-20">
           <div className="eyebrow mb-3">Einblick in den Kurs</div>
           <h2 className="h-section text-[clamp(34px,5vw,58px)] mb-5">
-            5 Phasen. 196 Items. <span className="text-red">Harte Gates.</span>
+            5 Schritte. 196 Lektionen. <span className="text-red">Klare Ergebnisse.</span>
           </h2>
           <p className="text-[17px] text-text-2 max-w-2xl mx-auto leading-relaxed">
-            Jede Phase endet mit einem nicht-verhandelbaren Output. Keine Phase 3, bevor Phase 2 sauber ist.
+            Jeder Schritt endet mit einem konkreten Ergebnis, das du in der Hand hast. Du gehst erst weiter, wenn der Schritt davor sauber sitzt.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-6 lg:gap-8">
           {[
-            { num: "01", name: "Klären", q: "Was eigentlich, für wen?", items: "20 Items · 1–2 Wochen", points: ["Founder-Lens-Audit (Passion + Skills + Bandwidth)", "Avatar-Definition + Wettbewerber-Map", "Hero-Produkt-Hypothese formulieren"], gate: "5 Pflicht-Outputs vor Phase 2", color: "navy" },
-            { num: "02", name: "Validieren", q: "Will der Markt das wirklich?", items: "22 Items · 2–3 Wochen", points: ["Reddit-Pain-Mining + 20 Mom-Test-Calls", "Pre-Order-Smoke-Test (≥50 Optins)", "Margen-Mathematik: ≥45 % bestätigen"], gate: "≥50 Verbatim-Quotes + Pivot-Decision", color: "navy" },
-            { num: "03", name: "Aufstellen", q: "Brand · Shop · Recht · Logistik", items: "55 Items · 4–6 Wochen", points: ["Brand-DNA · Visual Keyframe · Shopify-Setup", "DACH-Compliance: DSGVO · BFSG · LUCID · PAngV", "Klaviyo-Flows + Tracking (Pixel + CAPI)"], gate: "Shop launchfähig + Compliance live", color: "navy" },
-            { num: "04", name: "Launchen", q: "Erste Bestellung von Fremden", items: "41 Items · 3–4 Wochen", points: ["Drop-Day-Routine + Pre-Launch-Mail-Sequenz", "Influencer-Outreach (UWG-konform)", "Reviews + Trust-Aufbau in den ersten 7 Tagen"], gate: "≥50 Bestellungen · ≥10 Reviews", color: "navy" },
-            { num: "05", name: "Skalieren", q: "Wird daraus eine Marke, kein Store?", items: "58 Items · 90 Tage", points: ["Meta/Google/TikTok-Performance-Marketing", "Voice-of-Customer-Loop + Email-Skalierung", "Team-Aufbau · Drop-Kalender · Trust-Stack"], gate: "CPA < AOV × Marge · Repeat ≥ 15 %", color: "navy", spanFull: true },
+            { num: "01", name: "Klären", q: "Was verkaufe ich eigentlich, und an wen?", items: "20 Lektionen · 1–2 Wochen", points: ["Selbst-Check: Was du liebst, was du kannst, wie viel Zeit du wirklich hast", "Wunschkunden klar beschreiben + Konkurrenz-Übersicht erstellen", "Erstes Produkt-Konzept festlegen — deine Wette: „das verkaufe ich"], gate: "5 fertige Ergebnisse, bevor es in Schritt 2 geht", color: "navy" },
+            { num: "02", name: "Nachfrage prüfen", q: "Will mein Wunschkunde das überhaupt kaufen?", items: "22 Lektionen · 2–3 Wochen", points: ["Echte Probleme aufdecken (Reddit, Foren) + 20 Gespräche mit Wunschkunden — du verkaufst nichts, du hörst zu", "Vorbestellungs-Test: 50+ echte Anmeldungen einsammeln, bevor du Ware kaufst", "Mit Zahlen prüfen: Bleiben nach Einkauf, Versand und Werbung 45 %+ Gewinn?"], gate: "50+ wörtliche Kundenstimmen + Entscheidung: weitermachen oder Idee anpassen", color: "navy" },
+            { num: "03", name: "Aufstellen", q: "Wie wird daraus etwas Echtes, das man kaufen kann?", items: "55 Lektionen · 4–6 Wochen", points: ["Marken-Identität (Stimme, Werte, Look) · erstes Design-Bild · Shop in Shopify einrichten", "Rechtliches DACH: Datenschutz, Barrierefreiheit, Verpackungsregister, Preisangaben", "E-Mail-Automatisierungen aufsetzen + Werbe-Messung sauber einrichten (Facebook-Pixel und Server-Tracking)"], gate: "Shop bereit zum Verkauf + alle Rechts-Themen abgehakt", color: "navy" },
+            { num: "04", name: "Launchen", q: "Wie kommen die ersten Käufer, die ich nicht kenne?", items: "41 Lektionen · 3–4 Wochen", points: ["Launch-Tag-Plan + E-Mail-Reihe vor dem Start, die Spannung aufbaut", "Influencer rechtssicher anschreiben (richtige Werbe-Kennzeichnung, keine Abmahnung)", "Erste Bewertungen einsammeln + Vertrauen aufbauen in der ersten Woche"], gate: "50+ Bestellungen · 10+ Bewertungen", color: "navy" },
+            { num: "05", name: "Wachsen", q: "Wie wird daraus eine echte Marke, kein Strohfeuer?", items: "58 Lektionen · 90 Tage", points: ["Bezahlte Werbung auf Facebook/Instagram, Google und TikTok — so geschaltet, dass sie sich rechnet", "Kundenstimmen systematisch sammeln und einbauen + E-Mail-Marketing hochfahren", "Erste Mitarbeiter ans Bord · Plan für neue Produkt-Launches · Vertrauen aufbauen über Presse, Bewertungen, Garantien"], gate: "Werbekosten pro Kunde unter dem Gewinn · 15 %+ kaufen ein zweites Mal", color: "navy", spanFull: true },
           ].map((p) => (
             <div key={p.num} className={`phase-chapter ${p.spanFull ? "lg:col-span-2" : ""}`}>
               <div className="bg-navy text-white p-7 lg:p-9 grid grid-cols-[auto_1fr] gap-6 items-center">

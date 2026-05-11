@@ -24,14 +24,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Founder OS — Das Agentur-Framework hinter modernen D2C-Brands",
+  title: "Founder OS — Dein Schritt-für-Schritt-Plan für deine erste eigene Online-Marke",
   description:
-    "Das Pre-Sold-Launch-Framework, mit dem wir bei BB Brands D2C-Marken aufbauen — jetzt als DIY-Programm für Solo-Founder. 90 Tage, €299.",
+    "Wie du als Anfänger deine erste Online-Marke startest — ohne vorher Geld für Lager oder Werbung zu verbrennen. 5 Schritte, 90 Tage, 299 €.",
   metadataBase: new URL("https://founder-os.bb-brands.de"),
   openGraph: {
-    title: "Founder OS — Das Agentur-Framework hinter modernen D2C-Brands",
+    title: "Founder OS — Dein Schritt-für-Schritt-Plan für deine erste Online-Marke",
     description:
-      "5 Phasen, harte Gates, kein Brand-First-Geschwafel. Validiere bevor du einen Cent in Inventar oder Logos verbrennst.",
+      "5 Schritte, klare Ergebnisse pro Schritt, kein Marketing-Geschwätz. Erst Nachfrage prüfen, dann investieren.",
     type: "website",
     locale: "de_DE",
   },
