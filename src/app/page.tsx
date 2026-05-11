@@ -282,7 +282,7 @@ export default function Home() {
       <section className="bg-navy py-20 lg:py-28 text-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-10 text-center">
           {[
-            { stat: "5+", label: "Online-Marken", desc: "die wir seit 2024 operativ aufbauen oder skalieren — von 0 € bis Millionen-Umsatz" },
+            { stat: "4+", label: "Jahre E-Com", desc: "Erfahrung im operativen Aufbau und Skalieren von Online-Marken — von 0 € bis Millionen-Umsatz" },
             { stat: "196", label: "Lektionen", desc: "aus 2+ Jahren Agentur-Arbeit — für Anfänger verständlich aufbereitet" },
             { stat: "82", label: "Shop-Bausteine", desc: "fertig zum Einbauen in dein Shopify-Theme — du musst nichts selbst programmieren" },
           ].map((s) => (
