@@ -235,9 +235,13 @@ export default function Home() {
               <div className="m-phase-grid-desktop max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-6 lg:gap-8">
                 {phases.map((p) => (
                   <div key={p.num} className={`phase-chapter ${p.spanFull ? "lg:col-span-2" : ""}`}>
-                    <div className="bg-navy text-white p-7 lg:p-9 grid grid-cols-[auto_1fr] gap-6 items-center">
-                      <div className="font-display font-extrabold text-[64px] lg:text-[72px] leading-none text-gold tracking-tighter">{p.num}</div>
-                      <div>
+                    <div
+                      className="relative bg-navy text-white p-7 lg:p-9 grid grid-cols-[auto_1fr] gap-6 items-center overflow-hidden bg-cover bg-center"
+                      style={{ backgroundImage: `url(/phase-${p.num}.jpg)` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/55"></div>
+                      <div className="relative font-display font-extrabold text-[64px] lg:text-[72px] leading-none text-gold tracking-tighter">{p.num}</div>
+                      <div className="relative">
                         <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-white/60 mb-1">Phase {p.num}</div>
                         <h3 className="h-section h-on-dark text-[28px] lg:text-[32px] mb-1">{p.name}</h3>
                         <div className="text-[14px] text-white/70 italic">&ldquo;{p.q}&rdquo;</div>
@@ -256,7 +260,6 @@ export default function Home() {
                     </div>
                   </div>
                 ))}
-              </div>
 
               {/* MOBILE: Accordion — kompakt, ein-/ausklappbar */}
               <div className="m-phase-accordion max-w-2xl mx-auto px-5">
