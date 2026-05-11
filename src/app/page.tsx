@@ -434,7 +434,14 @@ export default function Home() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="cream-photo-bg pos-left py-20 lg:py-28">
+      <section
+        className="cream-photo-bg py-20 lg:py-28"
+        style={{
+          ["--photo-bg" as string]: "url('/founder-faq.jpg')",
+          ["--photo-opacity" as string]: "0.32",
+          ["--photo-grayscale" as string]: "0%",
+        }}
+      >
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
             <div className="eyebrow mb-3">Häufige Fragen</div>

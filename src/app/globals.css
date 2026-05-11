@@ -99,11 +99,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/founder-moritz.jpg");
+  background-image: var(--photo-bg, url("/founder-moritz.jpg"));
   background-size: cover;
   background-position: center;
-  opacity: 0.38;
-  filter: blur(0.5px) grayscale(5%);
+  opacity: var(--photo-opacity, 0.38);
+  filter: blur(0.5px) grayscale(var(--photo-grayscale, 5%));
   pointer-events: none;
   z-index: -2;
 }
