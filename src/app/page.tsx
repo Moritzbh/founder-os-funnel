@@ -4,7 +4,7 @@ export default function Home() {
 
       {/* ============ WARNING-BANNER (sticky-top) ============ */}
       <div className="warning-banner">
-        Ein System für Anfänger, die ihre <u>erste Online-Marke aufbauen</u> wollen.
+        <strong>Achtung:</strong> Für Anfänger in DACH, die ihre erste eigene Online-Marke starten wollen — <u>ohne vorher Geld zu verbrennen</u>
       </div>
 
       {/* ============ STICKY MOBILE-HEADER (kompakt, immer sichtbar) ============ */}
