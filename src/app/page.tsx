@@ -151,7 +151,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6 lg:px-10 mt-16 lg:mt-24 text-center">
           <div className="eyebrow mb-5">Aus der Praxis</div>
           <p className="font-display font-extrabold text-[clamp(24px,3.2vw,38px)] leading-[1.15] text-navy mb-5">
-            Wir bauen Online-Marken auf, die <span className="text-red">mehrere Millionen Euro</span> im Jahr machen. Jetzt zeigen wir dir das System, mit dem das geht.
+            Wir bauen Online-Marken auf, die <span className="text-red">mehrere Millionen Euro</span> im Jahr umsetzen. Jetzt zeigen wir dir das System, mit dem das geht.
           </p>
           <p className="font-display font-bold text-[clamp(18px,2.4vw,26px)] text-navy/80 leading-tight">
             Das Einzige, was du machen musst: <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">Schritt für Schritt umsetzen.</span>
