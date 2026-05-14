@@ -4,7 +4,7 @@ export default function Home() {
 
       {/* ============ WARNING-BANNER (sticky-top) ============ */}
       <div className="warning-banner">
-        <strong>Achtung:</strong> Für Anfänger in DACH, die ihre erste eigene Online-Marke starten wollen — <u>ohne vorher Geld zu verbrennen</u>
+        Ein System für Anfänger, die ihre <u>erste Online-Marke aufbauen</u> wollen.
       </div>
 
       {/* ============ STICKY MOBILE-HEADER (kompakt, immer sichtbar) ============ */}
@@ -47,7 +47,7 @@ export default function Home() {
             FOUNDER OS
           </h1>
           <p className="font-body m-hero-sub text-[clamp(18px,2.2vw,26px)] text-navy max-w-3xl mx-auto leading-snug font-normal">
-            Wie Anfänger mit 0 € Umsatz zur <strong className="font-bold">ersten Bestellung von Fremden</strong> kommen — ohne vorher Lager oder Werbung zu zahlen.
+            So kommst du von 0 € Umsatz zu den <strong className="font-bold">ersten echten Bestellungen</strong>.
           </p>
         </div>
 
@@ -292,7 +292,7 @@ export default function Home() {
 
         {/* Mid-Page CTA */}
         <div className="max-w-2xl mx-auto px-5 mt-12 lg:mt-20 text-center">
-          <p className="text-[15px] lg:text-[16px] text-text-3 mb-4 lg:mb-5">Bereit für den kompletten Plan?</p>
+          <p className="text-[15px] lg:text-[16px] text-text-3 mb-4 lg:mb-5">Bereit für den ersten Umsatz?</p>
           <a href="#pricing" className="btn-gold">
             Jetzt starten — 299 €
           </a>
