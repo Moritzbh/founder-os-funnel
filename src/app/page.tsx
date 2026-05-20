@@ -1,4 +1,11 @@
 export default function Home() {
+  // Stripe Payment Link is configured per-environment via Vercel ENV.
+  // Falls back to in-page anchor scroll if not set so the page never has a broken CTA.
+  const stripeUrl = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK_URL?.trim();
+  const buyHref = stripeUrl && stripeUrl.length > 0 ? stripeUrl : "#pricing";
+  const buyTarget = stripeUrl ? "_self" : undefined;
+  const buyRel = stripeUrl ? "noopener" : undefined;
+
   return (
     <main className="min-h-screen bg-bg text-text-2">
 
@@ -449,7 +456,7 @@ export default function Home() {
             </details>
 
             <div className="text-center">
-              <a href="#" className="btn-gold w-full max-w-sm mx-auto justify-center">
+              <a href={buyHref} target={buyTarget} rel={buyRel} className="btn-gold w-full max-w-sm mx-auto justify-center">
                 Jetzt starten — 299 €
               </a>
               <div className="mt-4 flex items-center justify-center gap-2 flex-wrap">
@@ -552,7 +559,7 @@ export default function Home() {
           <p className="font-display text-[clamp(16px,3vw,32px)] font-light text-white/60 italic mb-8 lg:mb-10">
             Oder du zahlst es später mit Zeit, Geld und Frust.
           </p>
-          <a href="#pricing" className="btn-gold">
+          <a href={buyHref} target={buyTarget} rel={buyRel} className="btn-gold">
             Jetzt starten — 299 €
           </a>
           <div className="mt-5 lg:mt-6 font-mono text-[10.5px] lg:text-[11px] text-white/40 uppercase tracking-[0.2em]">
@@ -567,7 +574,7 @@ export default function Home() {
           <span className="m-sticky-cta-bar-price-old">499 €</span>
           <span className="m-sticky-cta-bar-price-new">299 €</span>
         </div>
-        <a href="#pricing" className="m-sticky-cta-bar-btn">Jetzt starten →</a>
+        <a href={buyHref} target={buyTarget} rel={buyRel} className="m-sticky-cta-bar-btn">Jetzt starten →</a>
       </div>
 
       {/* ============ FOOTER ============ */}
