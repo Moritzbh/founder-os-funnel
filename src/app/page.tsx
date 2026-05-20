@@ -24,7 +24,7 @@ export default function Home() {
               <span className="bb-logo-sub-trademark">™</span>
             </span>
           </a>
-          <a href="#pricing" className="m-sticky-cta">299 € →</a>
+          <a href={buyHref} target={buyTarget} rel={buyRel} className="m-sticky-cta">299 € →</a>
         </div>
       </header>
 
@@ -110,7 +110,7 @@ export default function Home() {
               </li>
             </ul>
 
-            <a href="#pricing" className="btn-gold w-full justify-center">
+            <a href={buyHref} target={buyTarget} rel={buyRel} className="btn-gold w-full justify-center">
               Jetzt starten
             </a>
 
@@ -300,7 +300,7 @@ export default function Home() {
         {/* Mid-Page CTA */}
         <div className="max-w-2xl mx-auto px-5 mt-12 lg:mt-20 text-center">
           <p className="text-[15px] lg:text-[16px] text-text-3 mb-4 lg:mb-5">Bereit für den ersten Umsatz?</p>
-          <a href="#pricing" className="btn-gold">
+          <a href={buyHref} target={buyTarget} rel={buyRel} className="btn-gold">
             Jetzt starten — 299 €
           </a>
         </div>
