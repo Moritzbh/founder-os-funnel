@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { getStripe } from "@/lib/stripe";
+import { signAccessToken } from "@/lib/jwt";
 
 export const dynamic = "force-dynamic";
+
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://founder-os.bb-brands.de";
 
 type PageProps = {
   searchParams: Promise<{ session_id?: string }>;
@@ -10,7 +14,7 @@ type PageProps = {
 export default async function ZugangPage({ searchParams }: PageProps) {
   const { session_id } = await searchParams;
 
-  const result = session_id ? await verifySession(session_id) : null;
+  const result = session_id ? await verifyAndSign(session_id) : null;
 
   return (
     <main className="min-h-screen bg-bg flex flex-col">
@@ -23,7 +27,7 @@ export default async function ZugangPage({ searchParams }: PageProps) {
         </Link>
 
         {result?.paid ? (
-          <PaidView email={result.email} />
+          <PaidView email={result.email} magicLink={result.magicLink} />
         ) : (
           <PendingView reason={result?.reason} />
         )}
@@ -32,7 +36,13 @@ export default async function ZugangPage({ searchParams }: PageProps) {
   );
 }
 
-function PaidView({ email }: { email: string | null }) {
+function PaidView({
+  email,
+  magicLink,
+}: {
+  email: string | null;
+  magicLink: string;
+}) {
   return (
     <div>
       <div className="text-[11px] font-mono tracking-[0.18em] uppercase text-accent font-bold mb-4">
@@ -43,47 +53,76 @@ function PaidView({ email }: { email: string | null }) {
         Willkommen an Bord.
       </h1>
 
-      <p className="text-[17px] leading-relaxed text-text-2 mb-8">
-        Wir haben dir gerade eine Mail an{" "}
-        <strong className="text-text">{email ?? "deine Mailadresse"}</strong>{" "}
-        geschickt. Darin ist dein Zugangs-Link zum Kurs. Schau auch im
-        Spam-Ordner — Stripe schickt parallel die Rechnung von einer
-        anderen Absender-Adresse.
+      <p className="text-[17px] leading-relaxed text-text-2 mb-6">
+        {email ? (
+          <>
+            Deine Zahlung von <strong className="text-text">{email}</strong> ist
+            durch. Stripe schickt dir die Rechnung gleich automatisch per Mail.
+          </>
+        ) : (
+          <>
+            Deine Zahlung ist durch. Stripe schickt dir die Rechnung gleich
+            automatisch per Mail.
+          </>
+        )}
       </p>
 
+      <div className="flex flex-col sm:flex-row gap-3 mb-10">
+        <a
+          href={magicLink}
+          className="inline-flex items-center justify-center px-7 py-4 bg-text text-white rounded-full text-[15px] font-bold hover:bg-accent transition-colors"
+        >
+          Direkt zum Kurs →
+        </a>
+        <a
+          href="https://calendly.com/bb-brands/founder-os-15min"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center px-7 py-4 border border-text rounded-full text-[15px] font-semibold text-text hover:bg-text hover:text-white transition-colors"
+        >
+          15-Min-Klärungs-Call buchen
+        </a>
+      </div>
+
       <div className="bg-bg-card border border-line rounded-xl p-6 lg:p-8 mb-8">
-        <p className="text-[14px] font-bold text-text mb-3">Mail nicht angekommen?</p>
-        <p className="text-[14px] leading-relaxed text-text-2 mb-4">
-          Manchmal dauert es 1–2 Minuten. Wenn nach 5 Minuten immer noch nichts
-          da ist, schreib mir kurz an{" "}
+        <div className="flex items-baseline justify-between gap-4 mb-3 flex-wrap">
+          <p className="text-[14px] font-bold text-text">
+            Speicher dir diesen Link
+          </p>
+          <span className="text-[10.5px] font-mono uppercase tracking-wider text-text-3">
+            für den Notfall
+          </span>
+        </div>
+        <p className="text-[13.5px] leading-relaxed text-text-2 mb-4">
+          Mit diesem Link kommst du jederzeit zurück in den Kurs — auch von
+          einem anderen Browser. Bookmark ihn, oder schick ihn dir per Mail
+          an dich selbst. Er ist 365 Tage gültig.
+        </p>
+        <code className="block text-[11.5px] font-mono bg-bg-soft border border-line rounded px-3 py-3 text-text-2 break-all leading-relaxed">
+          {magicLink}
+        </code>
+      </div>
+
+      <div className="border-t border-line pt-6 mt-10">
+        <p className="text-[13.5px] leading-relaxed text-text-3">
+          <strong className="text-text-2">Wenn du den Link verlierst</strong>{" "}
+          und der Browser-Cookie weg ist: schreib mir kurz an{" "}
           <a
             href="mailto:info@bb-brands.de?subject=Founder%20OS%20Zugang%20fehlt"
             className="text-accent font-semibold underline"
           >
             info@bb-brands.de
-          </a>{" "}
-          mit deiner Bestell-ID:
+          </a>
+          {email ? (
+            <>
+              {" "}
+              mit deiner Kauf-Mailadresse ({email}) — ich schicke dir manuell
+              einen neuen Link.
+            </>
+          ) : (
+            <> mit deiner Kauf-Mailadresse — ich schicke dir manuell einen neuen Link.</>
+          )}
         </p>
-        <code className="block text-[12px] font-mono bg-bg-soft border border-line rounded px-3 py-2 text-text-2 break-all">
-          Session-ID siehe Bestätigungs-Mail
-        </code>
-      </div>
-
-      <div className="border-t border-line pt-8 mt-12">
-        <p className="text-[14px] leading-relaxed text-text-2 mb-2">
-          <strong className="text-text">Übrigens:</strong> Du kannst direkt im
-          Anschluss einen 15-Minuten-Klärungs-Call mit mir buchen — der ist im
-          Kurs enthalten und gut, um deinen ersten Schritt zu machen, ohne in
-          Phase 1 hängenzubleiben.
-        </p>
-        <a
-          href="https://calendly.com/bb-brands/founder-os-15min"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 text-[14px] font-semibold text-accent hover:underline"
-        >
-          Discovery-Call buchen →
-        </a>
       </div>
     </div>
   );
@@ -107,13 +146,12 @@ function PendingView({ reason }: { reason?: string }) {
       </p>
 
       <p className="text-[16px] leading-relaxed text-text-2 mb-6">
-        Wenn du gerade bezahlt hast: warte 1–2 Minuten und prüf deinen
-        E-Mail-Posteingang. Du bekommst zwei Mails — die Rechnung von Stripe
-        und den Kurs-Zugang von Founder OS.
+        Wenn du gerade bezahlt hast: warte 30 Sekunden und lade die Seite neu.
+        Stripe braucht manchmal einen Moment, um die Zahlung zu bestätigen.
       </p>
 
       <p className="text-[14px] leading-relaxed text-text-3 mb-8">
-        Wenn nach 5 Minuten nichts da ist, schreib mir kurz an{" "}
+        Wenn nach einer Minute immer noch nichts geht, schreib mir kurz an{" "}
         <a
           href="mailto:info@bb-brands.de?subject=Founder%20OS%20Zugang%20fehlt"
           className="text-accent font-semibold"
@@ -132,25 +170,41 @@ function PendingView({ reason }: { reason?: string }) {
   );
 }
 
-async function verifySession(sessionId: string): Promise<{
+async function verifyAndSign(sessionId: string): Promise<{
   paid: boolean;
   email: string | null;
+  magicLink: string;
   reason?: string;
 }> {
   try {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.retrieve(sessionId);
-    if (session.payment_status === "paid") {
+    if (session.payment_status !== "paid") {
       return {
-        paid: true,
-        email:
-          session.customer_details?.email || session.customer_email || null,
+        paid: false,
+        email: null,
+        magicLink: "",
+        reason: session.payment_status,
       };
     }
-    return { paid: false, email: null, reason: session.payment_status };
+    const email =
+      session.customer_details?.email || session.customer_email || null;
+    const token = await signAccessToken({
+      email: email ?? "unknown",
+      product: "founder-os",
+      purchasedAt: new Date().toISOString(),
+      stripeSessionId: session.id,
+    });
+    const magicLink = `${BASE_URL}/api/access/redeem?t=${encodeURIComponent(token)}`;
+    return { paid: true, email, magicLink };
   } catch (err) {
     const msg = err instanceof Error ? err.message : "unknown";
     console.warn("[zugang] could not verify session", { sessionId, err: msg });
-    return { paid: false, email: null, reason: "lookup-failed" };
+    return {
+      paid: false,
+      email: null,
+      magicLink: "",
+      reason: "lookup-failed",
+    };
   }
 }
