@@ -24,12 +24,12 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Founder OS — Dein Schritt-für-Schritt-Plan für deine erste eigene Online-Marke",
+  title: "Founder OS: Dein Schritt-für-Schritt-Plan für deine erste eigene Online-Marke",
   description:
     "Wie du als Anfänger deine erste Online-Marke startest — ohne vorher Geld für Lager oder Werbung zu verbrennen. 5 Schritte, 90 Tage, 299 €.",
   metadataBase: new URL("https://founder-os.bb-brands.de"),
   openGraph: {
-    title: "Founder OS — Dein Schritt-für-Schritt-Plan für deine erste Online-Marke",
+    title: "Founder OS: Dein Schritt-für-Schritt-Plan für deine erste Online-Marke",
     description:
       "5 Schritte, klare Ergebnisse pro Schritt, kein Marketing-Geschwätz. Erst Nachfrage prüfen, dann investieren.",
     type: "website",
