@@ -33,6 +33,18 @@
   --color-green: #16a34a;
   --color-green-soft: #ecfdf5;
 
+  /* Accent-Aliasse — von /kurs referenziert (Orange = Signal-Red-Token) */
+  --color-accent: #ff6b3d;
+  --color-accent-deep: #e85a2c;
+  --color-accent-bg: #fff4ee;
+  --color-bg-card: #ffffff;
+
+  /* LMS-Callout-Töne */
+  --color-amber: #d97706;
+  --color-amber-bg: #fffbeb;
+  --color-blue-info: #2563eb;
+  --color-blue-info-bg: #eff6ff;
+
   /* Fonts (filled by next/font in layout.tsx) */
   --font-display: var(--font-outfit), "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -65,6 +77,12 @@
   --color-line-soft: var(--color-line-soft);
   --color-green: var(--color-green);
   --color-green-soft: var(--color-green-soft);
+  --color-accent: var(--color-accent);
+  --color-accent-deep: var(--color-accent-deep);
+  --color-accent-bg: var(--color-accent-bg);
+  --color-bg-card: var(--color-bg-card);
+  --color-amber: var(--color-amber);
+  --color-blue-info: var(--color-blue-info);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
@@ -675,3 +693,130 @@ body {
     line-height: 1.55 !important;
   }
 }
+
+/* ============================================================
+   LMS · /kurs — Dashboard, Phasen-Index, Lektionen
+   ============================================================ */
+
+.fos-mono {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* Lesson prose — portiert aus Kurs/style.css, auf App-Tokens gemappt */
+.lesson-prose {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-2);
+}
+.lesson-prose > :first-child { margin-top: 0; }
+.lesson-prose h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin: 40px 0 14px;
+  padding-top: 26px;
+  border-top: 1px solid var(--color-line);
+}
+.lesson-prose h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.lesson-prose h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+  margin: 26px 0 10px;
+}
+.lesson-prose h4 {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.lesson-prose p { margin: 0 0 14px; }
+.lesson-prose ul, .lesson-prose ol { margin: 12px 0 18px 24px; }
+.lesson-prose li { margin-bottom: 6px; }
+.lesson-prose strong { color: var(--color-text); font-weight: 700; }
+.lesson-prose em { font-style: italic; }
+.lesson-prose a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
+.lesson-prose a:hover { color: var(--color-accent-deep); }
+.lesson-prose code {
+  background: var(--color-bg-soft);
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--color-navy);
+}
+.lesson-prose pre {
+  background: var(--color-navy-deep);
+  color: #e5e5e5;
+  padding: 22px 24px;
+  border-radius: 8px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-x: auto;
+  margin: 18px 0;
+  white-space: pre;
+}
+.lesson-prose pre code { background: transparent; color: inherit; padding: 0; }
+.lesson-prose blockquote {
+  margin: 16px 0;
+  padding: 14px 22px;
+  background: var(--color-bg-soft);
+  border-left: 3px solid var(--color-navy);
+  font-style: italic;
+  color: var(--color-text-2);
+  border-radius: 0 6px 6px 0;
+}
+
+/* Callout-Boxen */
+.lesson-prose .output-box,
+.lesson-prose .warn-box,
+.lesson-prose .info-box,
+.lesson-prose .disclaim-box {
+  padding: 20px 26px;
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+}
+.lesson-prose .output-box { background: var(--color-green-soft); border-left: 4px solid var(--color-green); }
+.lesson-prose .output-box h4 { color: var(--color-green); }
+.lesson-prose .output-box ul, .lesson-prose .output-box li { margin-bottom: 0; }
+.lesson-prose .warn-box { background: var(--color-amber-bg); border-left: 4px solid var(--color-amber); }
+.lesson-prose .warn-box h4 { color: var(--color-amber); }
+.lesson-prose .info-box { background: var(--color-blue-info-bg); border-left: 4px solid var(--color-blue-info); }
+.lesson-prose .info-box h4 { color: var(--color-blue-info); }
+.lesson-prose .disclaim-box {
+  background: var(--color-bg-soft);
+  border-left: 4px solid var(--color-text-3);
+  font-size: 13.5px;
+  color: var(--color-text-3);
+  font-style: italic;
+}
+.lesson-prose .disclaim-box strong { color: var(--color-text-2); }
+
+/* Phasen-Index dark head */
+.fos-phase-head {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-deep) 100%);
+  color: #fff;
+}
+.fos-phase-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+/* Item-Row done-state (via data-done Attribut vom Client gesetzt) */
+.fos-item[data-done="true"] .fos-item-title {
+  color: var(--color-text-3);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.fos-item[data-done="true"] .fos-item-num { color: var(--color-green); font-weight: 700; }
