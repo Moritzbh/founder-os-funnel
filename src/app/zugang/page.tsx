@@ -94,7 +94,7 @@ function PaidView({
           </span>
         </div>
         <p className="text-[13.5px] leading-relaxed text-text-2 mb-4">
-          Mit diesem Link kommst du jederzeit zurück in den Kurs — auch von
+          Mit diesem Link kommst du jederzeit zurück in den Kurs, auch von
           einem anderen Browser. Bookmark ihn, oder schick ihn dir per Mail
           an dich selbst. Er ist 365 Tage gültig.
         </p>
@@ -116,11 +116,11 @@ function PaidView({
           {email ? (
             <>
               {" "}
-              mit deiner Kauf-Mailadresse ({email}) — ich schicke dir manuell
+              mit deiner Kauf-Mailadresse ({email}), ich schicke dir manuell
               einen neuen Link.
             </>
           ) : (
-            <> mit deiner Kauf-Mailadresse — ich schicke dir manuell einen neuen Link.</>
+            <> mit deiner Kauf-Mailadresse, ich schicke dir manuell einen neuen Link.</>
           )}
         </p>
       </div>
@@ -141,7 +141,7 @@ function PendingView({ reason }: { reason?: string }) {
 
       <p className="text-[16px] leading-relaxed text-text-2 mb-6">
         Wir konnten deine Bestellung gerade nicht eindeutig zuordnen. Das ist
-        meistens harmlos — entweder warst du schneller als Stripe, oder die
+        meistens harmlos, entweder warst du schneller als Stripe, oder die
         Seite wurde direkt aufgerufen.
       </p>
 

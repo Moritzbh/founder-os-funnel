@@ -13,7 +13,7 @@ const REASON_COPY: Record<string, { headline: string; body: string }> = {
   },
   missing: {
     headline: "Der Zugangs-Link fehlt.",
-    body: "In der URL war kein Token. Öffne nochmal die Welcome-Mail und klick direkt auf den Button — der enthält den Token.",
+    body: "In der URL war kein Token. Öffne nochmal die Welcome-Mail und klick direkt auf den Button, der enthält den Token.",
   },
   invalid: {
     headline: "Der Zugangs-Link wirkt ungültig.",

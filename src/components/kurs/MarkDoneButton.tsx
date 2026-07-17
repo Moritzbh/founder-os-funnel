@@ -16,7 +16,7 @@ export default function MarkDoneButton({ itemId }: { itemId: string }) {
           : "bg-accent text-white hover:bg-accent-deep"
       }`}
     >
-      {done ? "✓ Erledigt — rückgängig" : "Als erledigt markieren"}
+      {done ? "✓ Erledigt, rückgängig" : "Als erledigt markieren"}
     </button>
   );
 }

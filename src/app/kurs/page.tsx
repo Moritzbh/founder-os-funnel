@@ -34,7 +34,7 @@ export default async function KursPage() {
           </h1>
           <p className="text-[16px] leading-relaxed text-text-2 max-w-xl mb-2">
             Eingeloggt als{" "}
-            <strong className="text-navy">{access.email}</strong> — Kauf am{" "}
+            <strong className="text-navy">{access.email}</strong>, Kauf am{" "}
             {purchasedLabel}.
           </p>
           <p className="text-[15px] leading-relaxed text-text-2 max-w-xl">
@@ -73,7 +73,7 @@ export default async function KursPage() {
               Call buchen →
             </a>
             <a
-              href="mailto:info@bb-brands.de?subject=Founder%20OS%20–%20Mein%20Start"
+              href="mailto:info@bb-brands.de?subject=Founder%20OS%3A%20Mein%20Start"
               className="inline-flex items-center gap-2 px-5 py-3 border border-line rounded-full text-[14px] font-semibold text-navy hover:border-navy transition-colors"
             >
               Mir schreiben
@@ -92,11 +92,12 @@ export default async function KursPage() {
         {/* Beta-Hinweis */}
         <section className="mt-14 pt-8 border-t border-line">
           <p className="text-[13px] leading-relaxed text-text-3">
-            <strong className="text-text-2">Hinweis Beta-Phase:</strong> Aktuell
-            sind {liveLessons} Lektionen ausformuliert und direkt hier
-            abrufbar — die restlichen Items siehst du schon in der Struktur und
-            werden laufend nachgezogen. Solange arbeite ich die ersten Käufer
-            persönlich mit durch: schreib mir, sobald du an ein Gate kommst.
+            <strong className="text-text-2">So arbeitest du:</strong> Alle{" "}
+            {liveLessons} Lektionen sind freigeschaltet. Geh Phase für Phase
+            durch, hak jedes Item ab, wenn es erledigt ist. Dein Fortschritt
+            bleibt in diesem Browser gespeichert. Wenn du an einem Gate nicht
+            weiterkommst, schreib mir. Ich antworte werktags innerhalb 24 h,
+            meistens schneller.
           </p>
         </section>
       </div>
