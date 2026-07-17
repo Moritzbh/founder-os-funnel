@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { requireAccess } from "@/lib/access";
 import KursNav from "@/components/kurs/KursNav";
 import PhaseItems from "@/components/kurs/PhaseItems";
-import { phaseBySlug, realLessonCount, PHASES } from "@/content/founder-os/course";
+import { phaseBySlug, PHASES } from "@/content/founder-os/course";
 
 export const dynamic = "force-dynamic";
 
@@ -18,94 +18,66 @@ export default async function PhasePage({ params }: PageProps) {
   const phase = phaseBySlug(phaseNum);
   if (!phase) notFound();
 
-  const live = realLessonCount(phaseNum);
   const prev = PHASES.find((p) => p.phase === phaseNum - 1);
   const next = PHASES.find((p) => p.phase === phaseNum + 1);
 
   return (
-    <main className="min-h-screen bg-bg">
+    <main className="ap min-h-screen">
       <KursNav />
 
-      {/* Dark Phase-Head */}
-      <header className="fos-phase-head">
-        <div className="max-w-4xl mx-auto px-6 lg:px-10 py-12 lg:py-16 flex items-start gap-6 lg:gap-10 flex-wrap">
-          <div className="fos-phase-num text-[64px] lg:text-[96px]">
-            {String(phase.phase).padStart(2, "0")}
+      {/* Schwarzer Pro-Hero */}
+      <header className="ap-hero-dark">
+        <div className="max-w-[820px] mx-auto px-6 pt-20 lg:pt-28 pb-16 lg:pb-20 text-center">
+          <div className="text-[13px] font-semibold tracking-[0.08em] uppercase text-[#86868b] mb-4">
+            Phase {phase.phase} von 5
           </div>
-          <div className="flex-1 min-w-[220px]">
-            <div className="fos-mono text-[12px] tracking-[0.2em] uppercase text-accent font-bold mb-2">
-              {phase.eyebrow}
-            </div>
-            <h1 className="font-display text-[34px] lg:text-[42px] leading-[1.05] font-extrabold tracking-[-0.02em] text-white mb-2">
-              {phase.title}
-            </h1>
-            <p className="text-[17px] text-white/60 italic mb-5">
-              „{phase.question}“
-            </p>
-            <div className="flex gap-5 flex-wrap fos-mono text-[11px] uppercase tracking-wider text-white/50">
-              <div>
-                Dauer: <strong className="text-white">{phase.weeks}</strong>
-              </div>
-              <div>
-                Module: <strong className="text-white">{phase.modules.length}</strong>
-              </div>
-              <div>
-                Items: <strong className="text-white">{phase.itemsTotal}</strong>
-              </div>
-              <div>
-                Live: <strong className="text-accent">{live}</strong>
-              </div>
-            </div>
+          <h1 className="text-[clamp(42px,6.5vw,64px)] leading-[1.05] font-bold tracking-[-0.02em] text-[#f5f5f7] mb-4">
+            {phase.title}.
+          </h1>
+          <p className="text-[clamp(18px,2.4vw,23px)] leading-[1.4] font-medium text-[#86868b] tracking-[-0.012em] max-w-[520px] mx-auto">
+            „{phase.question}“
+          </p>
+          <div className="flex justify-center gap-7 mt-8 text-[13px] text-[#86868b] tabular-nums">
+            <span>{phase.weeks}</span>
+            <span>{phase.modules.length} Module</span>
+            <span>{phase.itemsTotal} Lektionen</span>
           </div>
         </div>
       </header>
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-10 py-12 lg:py-14">
-        <p className="text-[18px] lg:text-[19px] leading-[1.55] text-text-2 max-w-2xl mb-10">
+      <div className="max-w-[820px] mx-auto px-6 py-14 lg:py-16">
+        <p className="text-[17px] lg:text-[19px] leading-[1.55] text-[#1d1d1f] tracking-[-0.012em] max-w-[640px] mb-12">
           {phase.lead}
         </p>
 
         <PhaseItems phase={phase.phase} modules={phase.modules} />
 
         {/* Phasen-Navigation */}
-        <div className="flex justify-between gap-4 mt-12 pt-8 border-t border-line">
+        <div className="flex justify-between items-center gap-4 mt-14 pt-8 border-t border-[#d2d2d7]">
           {prev ? (
             <Link
               href={`/kurs/${prev.phase}`}
-              className="flex-1 rounded-xl border border-line bg-white px-5 py-4 hover:border-navy transition-colors"
+              className="text-[15px] font-medium text-[#0071e3] hover:underline"
             >
-              <div className="fos-mono text-[10px] uppercase tracking-wider text-text-3 mb-1">
-                ← Phase {prev.phase}
-              </div>
-              <div className="text-[14px] font-semibold text-navy">
-                {prev.title}
-              </div>
+              ‹ Phase {prev.phase} · {prev.title}
             </Link>
           ) : (
             <Link
               href="/kurs"
-              className="flex-1 rounded-xl border border-line bg-white px-5 py-4 hover:border-navy transition-colors"
+              className="text-[15px] font-medium text-[#0071e3] hover:underline"
             >
-              <div className="fos-mono text-[10px] uppercase tracking-wider text-text-3 mb-1">
-                ← Zurück
-              </div>
-              <div className="text-[14px] font-semibold text-navy">Dashboard</div>
+              ‹ Übersicht
             </Link>
           )}
           {next ? (
             <Link
               href={`/kurs/${next.phase}`}
-              className="flex-1 rounded-xl border border-line bg-white px-5 py-4 text-right hover:border-navy transition-colors"
+              className="text-[15px] font-medium text-[#0071e3] hover:underline text-right"
             >
-              <div className="fos-mono text-[10px] uppercase tracking-wider text-text-3 mb-1">
-                Phase {next.phase} →
-              </div>
-              <div className="text-[14px] font-semibold text-navy">
-                {next.title}
-              </div>
+              Phase {next.phase} · {next.title} ›
             </Link>
           ) : (
-            <div className="flex-1" />
+            <span />
           )}
         </div>
       </div>

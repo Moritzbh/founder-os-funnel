@@ -9,6 +9,14 @@ import {
   TOTAL_ITEMS,
 } from "@/lib/progress";
 
+const PHASE_SUB: Record<number, string> = {
+  1: "Fundament legen",
+  2: "Nachfrage beweisen",
+  3: "Marke und Shop bauen",
+  4: "Ersten Umsatz holen",
+  5: "Zur echten Marke wachsen",
+};
+
 export default function DashboardPhases() {
   const state = useProgress();
   const totalDone = countTotalDone(state);
@@ -16,19 +24,24 @@ export default function DashboardPhases() {
 
   return (
     <div>
-      <p className="fos-mono text-[13px] text-text-3 mb-8">
-        Dein Fortschritt:{" "}
-        <strong className="text-accent">
-          {totalDone} / {TOTAL_ITEMS} Items
-        </strong>
-        {totalDone === 0
-          ? " · noch nichts angefangen"
-          : totalDone === TOTAL_ITEMS
-            ? " · alles erledigt 🟢"
-            : ` · ${pct} % geschafft`}
-      </p>
+      {/* Gesamt-Fortschritt */}
+      <div className="ap-card p-7 lg:p-9 mb-6">
+        <div className="flex items-baseline justify-between gap-4 mb-4 flex-wrap">
+          <div className="text-[19px] font-semibold tracking-[-0.015em] text-[#1d1d1f]">
+            Dein Fortschritt
+          </div>
+          <div className="text-[14px] text-[#6e6e73] tabular-nums">
+            {totalDone} von {TOTAL_ITEMS} Lektionen
+            {totalDone > 0 ? ` · ${pct} %` : ""}
+          </div>
+        </div>
+        <div className="ap-progress">
+          <div className="ap-progress-fill" style={{ width: `${pct}%` }} />
+        </div>
+      </div>
 
-      <div className="space-y-3">
+      {/* Phasen-Cards */}
+      <div className="grid gap-5">
         {PHASES.map((p) => {
           const total = p.itemsTotal;
           const done = countPhaseDone(state, p.phase);
@@ -38,37 +51,46 @@ export default function DashboardPhases() {
             <Link
               key={p.phase}
               href={`/kurs/${p.phase}`}
-              className={`group grid grid-cols-[auto_1fr_auto] items-center gap-4 lg:gap-6 rounded-xl border p-5 lg:px-7 transition-all hover:-translate-y-0.5 ${
-                complete
-                  ? "border-green bg-green-soft"
-                  : "border-line bg-white hover:border-navy"
-              }`}
+              className="ap-card-white p-7 lg:p-8 grid grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] items-center gap-6 lg:gap-8"
             >
               <div
-                className={`fos-mono text-[14px] font-bold ${
-                  complete ? "text-green" : "text-text-3"
+                className={`text-[40px] lg:text-[48px] font-bold tracking-[-0.03em] leading-none tabular-nums ${
+                  complete ? "text-[#34c759]" : "text-[#d2d2d7]"
                 }`}
               >
                 {String(p.phase).padStart(2, "0")}
               </div>
               <div className="min-w-0">
-                <div className="font-display font-bold text-[17px] text-navy leading-tight">
+                <div className="text-[21px] lg:text-[24px] font-semibold tracking-[-0.018em] text-[#1d1d1f] leading-tight mb-0.5">
                   {p.title}
                 </div>
-                <div className="text-[13px] text-text-3 italic truncate">
-                  „{p.question}“
+                <div className="text-[14.5px] text-[#6e6e73]">
+                  {PHASE_SUB[p.phase]} · {p.weeks}
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <div className="hidden sm:block w-28 lg:w-40 h-1.5 rounded-full bg-line overflow-hidden">
-                  <div
-                    className="h-full bg-accent transition-[width] duration-500"
-                    style={{ width: `${barPct}%` }}
-                  />
+              <div className="col-span-2 lg:col-span-1 lg:w-44">
+                <div className="flex items-baseline justify-between mb-2">
+                  <span className="text-[12.5px] text-[#6e6e73] tabular-nums">
+                    {done} / {total}
+                  </span>
+                  {complete ? (
+                    <span className="text-[12.5px] font-medium text-[#34c759]">
+                      Fertig
+                    </span>
+                  ) : (
+                    <span className="text-[12.5px] font-medium text-[#0071e3]">
+                      Öffnen ›
+                    </span>
+                  )}
                 </div>
-                <div className="fos-mono text-[12px] font-semibold text-text-2 text-right min-w-[54px] tabular-nums">
-                  {complete ? "✓ " : ""}
-                  {done} / {total}
+                <div className="ap-progress">
+                  <div
+                    className="ap-progress-fill"
+                    style={{
+                      width: `${barPct}%`,
+                      background: complete ? "#34c759" : undefined,
+                    }}
+                  />
                 </div>
               </div>
             </Link>

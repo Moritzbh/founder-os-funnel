@@ -14,76 +14,53 @@ export default function PhaseItems({
   const state = useProgress();
 
   return (
-    <div className="space-y-4">
-      {modules.map((m) => (
-        <div
-          key={m.id}
-          className="rounded-xl border border-line bg-white overflow-hidden"
-        >
-          <div className="flex items-center gap-3 flex-wrap px-5 lg:px-7 py-4 bg-bg-soft border-b border-line">
-            <span className="fos-mono text-[11px] font-bold text-accent tracking-wide">
-              {m.id}
-            </span>
-            <span className="font-display font-bold text-[16px] text-navy">
-              {m.title}
-            </span>
-            <span className="fos-mono text-[11px] text-text-3 ml-auto">
-              {m.count}
-            </span>
-          </div>
-          <ul className="px-5 lg:px-7 py-2">
-            {m.items.map((it) => {
-              const done = !!state[it.itemId];
-              const inner = (
-                <>
-                  <span className="fos-item-num fos-mono text-[11px] text-text-3 min-w-[26px]">
-                    {it.num}
-                  </span>
-                  <span className="fos-item-title text-[14.5px] text-navy font-medium">
-                    {it.title}
-                  </span>
-                  <span
-                    className={`ml-auto text-[9px] fos-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${
-                      it.available
-                        ? "text-accent border-accent/40 bg-accent-bg"
-                        : "text-text-3 border-line bg-bg-soft"
-                    }`}
-                  >
-                    {it.available ? "Lektion" : "kommt noch"}
-                  </span>
-                  <span className="fos-mono text-[13px] text-text-3 min-w-[18px] text-right">
-                    {it.available ? "→" : ""}
-                  </span>
-                </>
-              );
-
-              if (it.available && it.slug) {
+    <div className="space-y-6">
+      {modules.map((m) => {
+        const doneCount = m.items.filter((it) => state[it.itemId]).length;
+        return (
+          <div key={m.id} className="ap-card overflow-hidden">
+            <div className="flex items-baseline gap-3 flex-wrap px-7 lg:px-9 pt-7 pb-4">
+              <span className="text-[12px] font-semibold text-[#0071e3] tracking-[0.02em] uppercase">
+                {m.id.replace(/^MODUL\s*/i, "Modul ")}
+              </span>
+              <h3 className="text-[19px] font-semibold tracking-[-0.015em] text-[#1d1d1f]">
+                {m.title}
+              </h3>
+              <span className="ml-auto text-[13px] text-[#6e6e73] tabular-nums">
+                {doneCount} / {m.items.length}
+              </span>
+            </div>
+            <ul className="px-3 lg:px-4 pb-4">
+              {m.items.map((it) => {
+                const done = !!state[it.itemId];
                 return (
                   <li key={it.itemId}>
                     <Link
                       href={`/kurs/${phase}/${it.slug}`}
                       data-done={done}
-                      className="fos-item flex items-center gap-4 py-3 border-b border-line last:border-b-0 -mx-2 px-2 rounded-md hover:bg-bg-soft transition-colors"
+                      className="fos-item flex items-center gap-4 px-4 lg:px-5 py-3.5 rounded-2xl hover:bg-white transition-colors"
                     >
-                      {inner}
+                      <span
+                        className={`fos-item-num text-[12px] tabular-nums min-w-[24px] ${
+                          done ? "" : "text-[#86868b]"
+                        }`}
+                      >
+                        {done ? "✓" : it.num}
+                      </span>
+                      <span className="fos-item-title text-[15.5px] font-medium text-[#1d1d1f] leading-snug">
+                        {it.title}
+                      </span>
+                      <span className="ml-auto text-[15px] text-[#86868b] shrink-0">
+                        ›
+                      </span>
                     </Link>
                   </li>
                 );
-              }
-              return (
-                <li
-                  key={it.itemId}
-                  data-done={done}
-                  className="fos-item flex items-center gap-4 py-3 border-b border-line last:border-b-0 opacity-55 cursor-default"
-                  title="Diese Lektion ist noch in Arbeit"
-                >
-                  {inner}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ))}
+              })}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 }

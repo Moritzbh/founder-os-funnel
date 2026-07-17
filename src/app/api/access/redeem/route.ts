@@ -29,7 +29,9 @@ export async function GET(request: NextRequest) {
   const jar = await cookies();
   jar.set(COOKIE_NAME, token, {
     httpOnly: true,
-    secure: true,
+    // In Produktion (https) secure; lokal (http://localhost) sonst lehnen
+    // manche Browser den Cookie ab und der Zugang greift nicht.
+    secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
     maxAge: COOKIE_MAX_AGE_SECONDS,

@@ -3,10 +3,7 @@ import { notFound } from "next/navigation";
 import { requireAccess } from "@/lib/access";
 import KursNav from "@/components/kurs/KursNav";
 import MarkDoneButton from "@/components/kurs/MarkDoneButton";
-import {
-  LESSON_BY_SLUG,
-  phaseBySlug,
-} from "@/content/founder-os/course";
+import { LESSON_BY_SLUG, phaseBySlug } from "@/content/founder-os/course";
 
 export const dynamic = "force-dynamic";
 
@@ -24,33 +21,31 @@ export default async function LessonPage({ params }: PageProps) {
   if (!lesson || !phase || lesson.phase !== phaseNum) notFound();
 
   return (
-    <main className="min-h-screen bg-bg">
+    <main className="ap min-h-screen">
       <KursNav />
 
-      <article className="max-w-[760px] mx-auto px-6 lg:px-10 pb-24">
+      <article className="max-w-[680px] mx-auto px-6 pb-28">
         {/* Breadcrumb */}
-        <nav className="fos-mono text-[12px] text-text-3 py-6 flex flex-wrap items-center gap-2">
-          <Link href="/kurs" className="hover:text-accent">
-            Dashboard
+        <nav className="text-[13px] text-[#86868b] pt-8 pb-10 flex flex-wrap items-center gap-2">
+          <Link href="/kurs" className="hover:text-[#1d1d1f]">
+            Übersicht
           </Link>
-          <span>/</span>
-          <Link href={`/kurs/${phaseNum}`} className="hover:text-accent">
+          <span>›</span>
+          <Link href={`/kurs/${phaseNum}`} className="hover:text-[#1d1d1f]">
             Phase {phaseNum} · {phase.title}
           </Link>
-          <span>/</span>
-          <span className="text-accent font-bold">{lesson.title}</span>
         </nav>
 
         {/* Head */}
-        <header className="pb-9 mb-9 border-b border-line">
-          <div className="fos-mono text-[11px] tracking-[0.2em] uppercase text-accent font-bold mb-4">
+        <header className="mb-12">
+          <div className="text-[13px] font-semibold tracking-[0.06em] uppercase text-[#0071e3] mb-4">
             {lesson.eyebrow}
           </div>
-          <h1 className="font-display text-[30px] lg:text-[40px] leading-[1.08] font-extrabold tracking-[-0.025em] text-navy">
+          <h1 className="text-[clamp(32px,5vw,48px)] leading-[1.08] font-bold tracking-[-0.02em] text-[#1d1d1f] mb-6">
             {lesson.title}
           </h1>
           <p
-            className="text-[17px] lg:text-[19px] leading-[1.55] text-text-2 italic border-l-[3px] border-accent pl-5 mt-6"
+            className="text-[19px] lg:text-[21px] leading-[1.45] font-medium text-[#6e6e73] tracking-[-0.012em]"
             dangerouslySetInnerHTML={{ __html: lesson.summary }}
           />
         </header>
@@ -62,35 +57,22 @@ export default async function LessonPage({ params }: PageProps) {
         />
 
         {/* Footer */}
-        <footer className="mt-12 pt-9 border-t border-line">
-          <div className="flex flex-col sm:flex-row justify-between gap-4 mb-8">
+        <footer className="mt-16 pt-10 border-t border-[#d2d2d7]">
+          <div className="text-center mb-10">
+            <MarkDoneButton itemId={lesson.itemId} />
+          </div>
+          <div className="flex justify-between items-center gap-4">
             <Link
               href={`/kurs/${phaseNum}`}
-              className="flex-1 rounded-xl border border-line bg-white px-5 py-4 hover:border-navy transition-colors"
+              className="text-[15px] font-medium text-[#0071e3] hover:underline"
             >
-              <div className="fos-mono text-[10px] uppercase tracking-wider text-text-3 mb-1">
-                ← Phase {phaseNum} Index
-              </div>
-              <div className="text-[14px] font-semibold text-navy">
-                Zurück zur Übersicht
-              </div>
+              ‹ Zurück zu Phase {phaseNum}
             </Link>
             {lesson.nextTitle ? (
-              <div className="flex-1 rounded-xl border border-dashed border-line bg-bg-soft px-5 py-4 sm:text-right">
-                <div className="fos-mono text-[10px] uppercase tracking-wider text-text-3 mb-1">
-                  {lesson.nextEyebrow ?? "Nächster Item"}
-                </div>
-                <div className="text-[14px] font-semibold text-text-3">
-                  {lesson.nextTitle}{" "}
-                  <span className="fos-mono text-[10px]">(kommt noch)</span>
-                </div>
-              </div>
-            ) : (
-              <div className="flex-1" />
-            )}
-          </div>
-          <div className="text-center">
-            <MarkDoneButton itemId={lesson.itemId} />
+              <span className="text-[13px] text-[#86868b] text-right">
+                Als Nächstes: {lesson.nextTitle}
+              </span>
+            ) : null}
           </div>
         </footer>
       </article>

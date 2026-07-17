@@ -820,3 +820,191 @@ body {
   text-decoration-thickness: 1px;
 }
 .fos-item[data-done="true"] .fos-item-num { color: var(--color-green); font-weight: 700; }
+
+/* ============================================================
+   APPLE-LOOK LMS ("ap") — /kurs komplett im Apple-Designsystem
+   ============================================================ */
+
+.ap {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Helvetica Neue", "Inter", sans-serif;
+  background: #ffffff;
+  color: #1d1d1f;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Frosted-Glass-Nav wie apple.com */
+.ap-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(251, 251, 253, 0.82);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+.ap-nav a { transition: color 0.2s ease, opacity 0.2s ease; }
+
+/* Buttons: Apple-Pills */
+.ap-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #0071e3;
+  color: #ffffff;
+  border: none;
+  border-radius: 980px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.ap-btn:hover { background: #0077ed; }
+.ap-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  color: #0071e3;
+  border: 1px solid #0071e3;
+  border-radius: 980px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ap-btn-ghost:hover { background: #0071e3; color: #fff; }
+.ap-btn-done {
+  background: #34c759;
+}
+.ap-btn-done:hover { background: #30b955; }
+
+/* Cards */
+.ap-card {
+  background: #f5f5f7;
+  border-radius: 28px;
+}
+.ap-card-white {
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease;
+}
+.ap-card-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Progressbar */
+.ap-progress {
+  height: 4px;
+  border-radius: 980px;
+  background: #d2d2d7;
+  overflow: hidden;
+}
+.ap-progress-fill {
+  height: 100%;
+  border-radius: 980px;
+  background: #0071e3;
+  transition: width 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Dark "Pro"-Hero (Phasen-Seite) */
+.ap-hero-dark {
+  background: #000000;
+  color: #f5f5f7;
+}
+
+/* Lesson-Prose im Apple-Stil (überschreibt Basis-Styles im ap-Kontext) */
+.ap .lesson-prose {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #1d1d1f;
+  letter-spacing: -0.011em;
+}
+.ap .lesson-prose h2 {
+  font-family: inherit;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 52px 0 16px;
+  padding-top: 0;
+  border-top: none;
+}
+.ap .lesson-prose h2:first-child { margin-top: 0; }
+.ap .lesson-prose h3 {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.015em;
+  margin: 32px 0 10px;
+}
+.ap .lesson-prose h4 {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.ap .lesson-prose p { margin: 0 0 16px; color: #1d1d1f; }
+.ap .lesson-prose li { margin-bottom: 8px; color: #1d1d1f; }
+.ap .lesson-prose strong { color: #1d1d1f; font-weight: 600; }
+.ap .lesson-prose a { color: #0071e3; text-decoration: none; }
+.ap .lesson-prose a:hover { text-decoration: underline; }
+.ap .lesson-prose code {
+  background: #f5f5f7;
+  color: #1d1d1f;
+  border-radius: 6px;
+}
+.ap .lesson-prose pre {
+  background: #1d1d1f;
+  color: #f5f5f7;
+  border-radius: 18px;
+  font-size: 13.5px;
+  padding: 24px 28px;
+}
+.ap .lesson-prose blockquote {
+  background: #f5f5f7;
+  border-left: none;
+  border-radius: 18px;
+  padding: 18px 24px;
+  color: #1d1d1f;
+}
+
+/* Callout-Boxen: weiche Apple-Cards statt Border-Left-Streifen */
+.ap .lesson-prose .output-box,
+.ap .lesson-prose .warn-box,
+.ap .lesson-prose .info-box,
+.ap .lesson-prose .disclaim-box {
+  border-left: none;
+  border-radius: 22px;
+  padding: 26px 30px;
+  margin: 28px 0;
+}
+.ap .lesson-prose .output-box { background: #f0faf3; }
+.ap .lesson-prose .output-box h4 { color: #248a3d; }
+.ap .lesson-prose .warn-box { background: #fff8ec; }
+.ap .lesson-prose .warn-box h4 { color: #c07600; }
+.ap .lesson-prose .info-box { background: #f0f6ff; }
+.ap .lesson-prose .info-box h4 { color: #0071e3; }
+.ap .lesson-prose .disclaim-box {
+  background: #f5f5f7;
+  color: #6e6e73;
+  font-size: 14px;
+  font-style: normal;
+}
+.ap .lesson-prose .disclaim-box strong { color: #1d1d1f; }
+
+/* Item-Row done-state im Apple-Kontext */
+.ap .fos-item[data-done="true"] .fos-item-title {
+  color: #86868b;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+.ap .fos-item[data-done="true"] .fos-item-num { color: #34c759; font-weight: 600; }
