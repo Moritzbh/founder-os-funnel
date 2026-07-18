@@ -26,7 +26,7 @@ export async function readAccess(): Promise<AccessPayload | null> {
 export async function requireAccess(): Promise<AccessPayload> {
   const access = await readAccess();
   if (!access) {
-    redirect("/kurs/zugang-fehlt?reason=no-cookie");
+    redirect("/login");
   }
   return access;
 }

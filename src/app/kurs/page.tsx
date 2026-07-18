@@ -7,16 +7,6 @@ export const dynamic = "force-dynamic";
 
 export default async function KursPage() {
   const access = await requireAccess();
-
-  const purchasedDate = new Date(access.purchasedAt);
-  const purchasedLabel = isNaN(purchasedDate.getTime())
-    ? "vor Kurzem"
-    : purchasedDate.toLocaleDateString("de-DE", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-      });
-
   const liveLessons = LESSONS.length;
 
   return (
@@ -34,8 +24,7 @@ export default async function KursPage() {
           In 5 Schritten. Ohne Geld zu verbrennen.
         </p>
         <p className="text-[13px] text-[#86868b] mt-6">
-          Eingeloggt als {access.email} · Kauf am {purchasedLabel} ·{" "}
-          {liveLessons} Lektionen freigeschaltet
+          Eingeloggt als {access.email} · {liveLessons} Lektionen freigeschaltet
         </p>
       </section>
 
